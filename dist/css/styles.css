@@ -195,6 +195,21 @@ body {
     -ms-flex-pack: center;
     justify-content: center; }
 
+.inline-group {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .inline-group .inline-group-block {
+    display: inline-block;
+    margin: 0 10px; }
+
 .button_submit {
   border: none;
   border-radius: 20px;
@@ -219,6 +234,23 @@ body {
     transform: translateY(4px);
     -webkit-box-shadow: 2px 1px 10px #bfbfbf;
     box-shadow: 2px 1px 10px #bfbfbf; }
+
+.button_cancel {
+  border: none;
+  border-radius: 20px;
+  background: #c5c5c5;
+  color: #fff;
+  -webkit-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s;
+  font-size: 20px;
+  padding: 10px 50px;
+  display: block;
+  margin: 30px auto 0;
+  cursor: pointer;
+  outline: none; }
+  .button_cancel:hover, .button_cancel:focus, .button_cancel:active {
+    background: #b9b8b8; }
 
 .form-control {
   display: block;

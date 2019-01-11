@@ -68,6 +68,15 @@ body {
     }
 }
 
+.inline-group {
+    display: flex;
+    justify-content: center;
+    .inline-group-block {
+        display: inline-block;
+        margin: 0 10px;
+    }
+}
+
 .button_submit {
     border: none;
     border-radius: 20px;
@@ -88,6 +97,23 @@ body {
         transform: translateY(4px);
         box-shadow: 2px 1px 10px #bfbfbf;
     }
+}
+
+.button_cancel {
+    border: none;
+    border-radius: 20px;
+    background: #c5c5c5;
+    color: #fff;    
+    transition: .4s;
+    font-size: 20px;
+    padding: 10px 50px;
+    display: block;
+    margin: 30px auto 0;
+    cursor: pointer;
+    outline: none;
+    &:hover, &:focus, &:active {
+        background: #b9b8b8;
+    }     
 }
 
 @import 'form-control';
