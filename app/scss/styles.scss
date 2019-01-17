@@ -72,6 +72,15 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
+.items {
+    display: flex;
+    .item {
+        text-align: center;
+        font-size: 19px;
+        font-weight: 700;
+        margin: 0 20px;
+    }
+}
 
 .content {
     background-color: #fff;
@@ -100,6 +109,7 @@ body {
 .inline-group {
     display: flex;
     justify-content: center;
+    margin-top: 50px;
     .inline-group-block {
         display: inline-block;
         margin: 0 10px;
@@ -146,3 +156,17 @@ body {
 }
 
 @import 'form-control';
+
+.text {
+    text-align: center;
+    color: #131c25;    
+    font-size: 19px;
+    font-weight: 700;
+    span:first-child {
+        padding-top:2px;vertical-align: middle;display: inline-block;
+    }
+}
+
+.m-b {
+    margin-top: 40px
+}

@@ -208,6 +208,18 @@ body {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
 
+.items {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .items .item {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0 20px; }
+
 .content {
   background-color: #fff;
   padding: 60px; }
@@ -243,7 +255,8 @@ body {
   -webkit-justify-content: center;
   -moz-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  margin-top: 50px; }
   .inline-group .inline-group-block {
     display: inline-block;
     margin: 0 10px; }
@@ -381,3 +394,16 @@ textarea.form-control {
     width: 1px;
     background: #ccc;
     left: 20px; }
+
+.text {
+  text-align: center;
+  color: #131c25;
+  font-size: 19px;
+  font-weight: 700; }
+  .text span:first-child {
+    padding-top: 2px;
+    vertical-align: middle;
+    display: inline-block; }
+
+.m-b {
+  margin-top: 40px; }
