@@ -1,3 +1,12 @@
+@font-face {
+	font-family: 'Assistant';
+	src: url('../fonts/Assistant-Regular.eot');
+	src: local('☺'), url('../fonts/Assistant-Regular.woff') format('woff'), url('../fonts/Assistant-Regular.ttf') format('truetype'), url('../fonts/Assistant-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 html, body {
     margin: 0;
     padding: 0;
@@ -7,6 +16,7 @@ body {
     height: 100vh;
     background-color: #f2f4f7;
     direction: rtl;
+    font-family: 'Assistant';
 }
 .loader {
     display: flex;
@@ -19,17 +29,36 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    top: 0;    
+    top: 0;
+    z-index: 100;
 }
 @import 'loader';
+
+.h1 {
+    font-size: 34px;
+    margin: 20px 0;
+}
 
 .header {
     background-color: #0a171f;
     width: 100%;
     padding: 30px 0;
-    border-bottom: 4px solid #b2b82a;
+    border-bottom: 4px solid #a4ca05;
     &-container {
-        direction: ltr;        
+        direction: ltr;
+        display: flex !important;  
+    }
+    .menu {
+        margin-left: auto;
+        ul {
+            display: flex;
+            flex-direction: row-reverse;
+            list-style: none;
+            margin: 0;
+            li {
+                margin: 0 8px;
+            }
+        }
     }
 }
 
@@ -55,14 +84,14 @@ body {
 }
 
 .form {
-    margin-top: 30px;    
-    input, select {        
+    margin-top: 50px;    
+    input, .select-container {        
         width: 46%;
         box-sizing: border-box;
         margin: 1% 2%;
     }
     .group {
-        max-width: 65%;
+        max-width: 62%;
         margin: 0 auto;
         justify-content: center;
     }
@@ -79,19 +108,19 @@ body {
 
 .button_submit {
     border: none;
-    border-radius: 20px;
-    background: #9ea530;
+    border-radius: 30px;
+    background: #92b523;
     color: #fff;
     box-shadow: 6px 6px 20px #bfbfbf;
     transition: .4s;
-    font-size: 20px;
-    padding: 10px 50px;
+    font-size: 28px;
+    padding: 3px 50px 8px;
     display: block;
     margin: 30px auto 0;
     cursor: pointer;
     outline: none;
     &:hover, &:focus {
-        background: #8a9128;
+        background: #7c9b19;
     }
     &:active {
         transform: translateY(4px);
