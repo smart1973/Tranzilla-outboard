@@ -1,0 +1,109 @@
+.navigation {
+    max-width: 325px;
+    display: block;
+    margin: 0 auto;
+    .step {
+        color: #92b523;
+        font-size: 48px;
+        font-weight: 400;
+        border: 2px solid #92b523;
+        border-radius: 50%;
+        height: 69px;
+        width: 63px;
+        text-align: center;
+        display: inline-block;
+        position: relative;
+        margin: 0 18px;
+        outline: none;
+        a {
+            color: inherit;
+            text-decoration: none;
+            outline: none;
+            width: 100%;
+            display: block;            
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        &.active {
+            background: #92b523;
+            color: #fff;
+            &:after, &:before {
+                background: #92b523;
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: calc(50% - 3px);
+            left: -22px;
+            width: 22px;
+            height: 3px;
+            border: 2px solid #92b523;
+            background: #fff;
+            border-right: none;
+            border-left: none;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: calc(50% - 3px);
+            right: -22px;
+            width: 22px;
+            height: 3px;
+            border: 2px solid #92b523;
+            background: #fff;
+            border-left: none;
+            border-right: none;
+        }
+    }
+    .step:first-child::after {
+        content: none;
+    }
+    .step:last-child::before {
+        content: none;
+    }
+}
+
+.no-before::before {
+    content: none !important;
+}
+
+.no-after::after {
+    content: none !important;
+}
+
+.arrowNav {
+    position: absolute;
+    top: 0;
+    color: #92b523;
+    fill: #92b523;
+    cursor: pointer;
+    &[aria-disabled="true"] {
+        fill: #d7d7d7;
+        color: #d7d7d7;
+    }
+    svg {
+        height: 75px;
+        stroke: #fff;
+        stroke-width: 2;
+    }
+    span {
+        font-size: 16px;
+        position: absolute;
+        width: 25px;
+        top: calc(50% - 16px);        
+    }
+}
+.prevArrow {
+    right: -100px;
+    span {
+        left: -8px;
+    }
+}
+.nextArrow {    
+    left: -100px;    
+    span {
+        right: -8px;
+    }
+}

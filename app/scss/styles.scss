@@ -6,7 +6,6 @@
 	font-style: normal;
 }
 
-
 html, body {
     margin: 0;
     padding: 0;
@@ -33,7 +32,8 @@ body {
     z-index: 100;
 }
 @import 'loader';
-
+@import './slick/slick';
+@import './slick/slick-theme';
 .h1 {
     font-size: 34px;
     margin: 20px 0;
@@ -170,3 +170,5 @@ body {
 .m-b {
     margin-top: 40px
 }
+
+@import 'navigation';
