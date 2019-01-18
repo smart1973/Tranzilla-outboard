@@ -7,6 +7,7 @@
     <title>Tranzilla</title>
 
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/datepicker.min.css">
 </head>
 <body>
     <div class="loader">
@@ -60,7 +61,7 @@
             </div>
             <div class="content">
                 <div class="navigation">
-                    <div class="step step9"><a href="/step10.html"> 9 </a></div>
+                    <div class="step step10"><a href="/step10.html"> 10 </a></div>
                     <div class="step step9"><a href="/step9.html"> 9 </a></div>
                     <div class="step step8"><a href="/step8.html"> 8 </a></div>
                     <div class="step step7"><a href="/step7.html"> 7 </a></div>
@@ -76,18 +77,132 @@
                 </div>
 
                 <div class="form">
-                    
+                    <form method="POST">
+                        <div class="group flex-container">
+                            <input type="text" name="name" placeholder="שם פרטי" class="form-control">
+                            <input type="text" name="surname" placeholder="שם משפחה" class="form-control">
+                            <input type="text" name="id" placeholder="מס' זהות" class="form-control">
+                            <input type="text" id="birthday" placeholder="תאריך לידה" class="form-control calendar">
+                        </div>
+                        <div class="group">
+                            <div class="radio_box">
+                                
+                                <label class="radio-container" for="man">זכר
+                                    <input type="radio" name="gender" value="man" id="man" checked> 
+                                    <span class="checkmark"></span>                                        
+                                </label>
+                                <label class="radio-container" for="woman">נקבה
+                                    <input type="radio" name="gender" value="woman" id="woman">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>                           
+                        </div>
+                        <div class="text group">
+                            <span class="outside">
+                                <img src="img/q.png" alt="כתובת מגורים" class="question">                
+                            </span>&nbsp;
+                            <span>
+                                    כתובת מגורים
+                            </span>
+                        </div>
+                        <div class="group flex-container m-b25">
+                            <input type="text" name="address" placeholder="רחוב, מספר, עיר" class="form-control">
+                            <div class="select-container">
+                                <div class="select-placeholder">
+                                        ישראל
+                                </div>
+                                <select name="city" class="form-control select-control js-select-custom">
+                                    
+                                    <option value="Moscow">Moscow</option>
+                                    <option value="Piter">Piter</option>
+                                </select>
+                            </div>
+                            <div class="select-container">
+                                <div class="select-placeholder">
+                                        מהי מדינת התושבות שלך?
+                                </div>
+                                <select name="country" class="form-control select-control js-select-custom">
+                                    <option value=""></option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Korea">Korea</option>
+                                </select>
+                            </div>
+
+                            <div class="select-container">
+                                <div class="select-placeholder">
+                                        מהי זיקתך לישראל ?
+                                </div>
+                                <select name="relationIsrael" class="form-control select-control js-select-custom">
+                                    <option value=""></option>
+                                    <option value="Canada">Somehow</option>                                    
+                                </select>
+                            </div>
+
+                            
+
+
+                        </div>
+                        <div class="text group m-b25">
+                            <span class="outside">
+                                <img src="img/q.png" alt="כתובת מגורים" class="question" >
+                                <div class="popup-title">
+                                    <div class="popup-block-text">
+                                            הודעת טקסט בסגנון HELP הידוע שלנו
+                                            יכול להיות 2-3 שורות טקסט הסבר
+                                    </div>
+                                </div>
+                            </span>&nbsp;
+                            <span>
+                                    האם הינך אישיות ציבורית בכירה בארץ או בחו”ל ?
+                            </span>
+                        </div>
+                        <div class="group m-b25 checkbox-container">
+                            <span class="plain_text">כן</span>
+                            <label class="switch">
+                                <input type="checkbox" name="senior" >
+                                <span class="slider round">
+                                    <span class="symbol symbol-yes">&#10004;</span>
+                                    <span class="symbol symbol-no">&#10008;</span>
+                                </span>
+                            </label>                       
+                            <span class="plain_text">לא</span>
+                        </div>
+                        <div class="group m-b25">
+                            <span class="js-remove-text"></span>
+                            <textarea name="comment" id="comment" class="form-control" placeholder="פירוט, הזן טקסט"></textarea>
+                        </div>
+
+                        <button type="submit" class="button_submit m-b">
+                                המשך
+                        </button>
+                    </form>
                 </div>                
             </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/slick.min.js"></script>
+    <script src="js/datepicker.min.js"></script>
     <script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var activeStep = 2;
-            setActiveStep(activeStep);                     
+            setActiveStep(activeStep);
+            
+            $('.calendar').datepicker({
+                language: {                    
+                    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                    daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                    daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+                    months: ['January','February','March','April','May','June', 'July','August','September','October','November','December'],
+                    monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    today: 'Today',
+                    clear: 'Clear',
+                    dateFormat: 'mm/dd/yyyy',
+                    timeFormat: 'hh:ii aa',
+                    firstDay: 0
+                }
+            })
         })
     </script>
 </body>

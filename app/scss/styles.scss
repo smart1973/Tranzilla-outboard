@@ -16,6 +16,7 @@ body {
     background-color: #f2f4f7;
     direction: rtl;
     font-family: 'Assistant';
+    overflow-x: hidden;
 }
 .loader {
     display: flex;
@@ -72,6 +73,12 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
+.flex {
+    display: flex;
+}
+.flex-start {
+    justify-content: flex-start;
+}
 .items {
     display: flex;
     .item {
@@ -85,35 +92,12 @@ body {
 .content {
     background-color: #fff;
     padding: 60px;
+    margin-bottom: 40px;
 }
 
 .title {
     text-align: center;
     font-size: 30px;
-}
-
-.form {
-    margin-top: 50px;    
-    input, .select-container {        
-        width: 46%;
-        box-sizing: border-box;
-        margin: 1% 2%;
-    }
-    .group {
-        max-width: 62%;
-        margin: 0 auto;
-        justify-content: center;
-    }
-}
-
-.inline-group {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    .inline-group-block {
-        display: inline-block;
-        margin: 0 10px;
-    }
 }
 
 .button_submit {
@@ -159,16 +143,61 @@ body {
 
 @import 'form-control';
 
-.text {
-    text-align: center;
+.text {    
     color: #131c25;    
     font-size: 19px;
     font-weight: 700;
+    position: relative;
     span:first-child {
         padding-top:2px;vertical-align: middle;display: inline-block;
     }
+    .question {
+        cursor: pointer;
+        &:hover + .popup-title {
+            transform: translateX(250px);
+            opacity: 1;
+        }
+    }
+    .popup-title {
+        transform: translateX(400px);
+        opacity: 0;
+        top: -12px;
+        right: 0;
+        position: absolute;            
+        transition: .7s;            
+        max-width: 210px;            
+    }
+    .popup-block-text {
+        position: relative;
+        font-weight: 400;
+        font-size: 14px;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.23);
+        border: 1px solid #d7d7d7;
+        background-color: #f4f4f4;
+        padding: 10px;
+        &::after {
+            content: '';
+            border: 10px solid transparent;
+            border-right-color: #f4f4f4;   
+            /* border-right-color: blue; */                    
+            position: absolute;
+            left: -20px;
+            top: 15px;
+        }
+        &::before {
+            content: '';
+            border: 13px solid transparent;
+            border-right-color: #d7d7d7;
+            /* border-right-color: red;    */
+            position: absolute;
+            left: -26px;
+            top: 12px;
+        }
+    }
 }
-
+.text-center {
+    text-align: center;
+}
 .info_text {
     padding-right: 8px;
     padding-top: 20px;
@@ -191,7 +220,10 @@ body {
 }
 
 .m-b {
-    margin-top: 40px
+    margin-top: 40px !important;
+}
+.m-b25 {
+    margin-top: 25px !important;
 }
 
 @import 'navigation';
@@ -228,4 +260,8 @@ body {
             background: #e06e03;
         }    
     }
+}
+
+.calendar {
+    background: url(../img/calendar_icon.png) 10px center no-repeat;
 }
