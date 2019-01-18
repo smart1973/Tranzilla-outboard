@@ -473,6 +473,7 @@ body {
   border: none;
   border-radius: 30px;
   background: #92b523;
+  font-family: 'Assistant';
   color: #fff;
   -webkit-box-shadow: 6px 6px 20px #bfbfbf;
   box-shadow: 6px 6px 20px #bfbfbf;
@@ -498,6 +499,7 @@ body {
   border: none;
   border-radius: 20px;
   background: #c5c5c5;
+  font-family: 'Assistant';
   color: #fff;
   -webkit-transition: .4s;
   -o-transition: .4s;
@@ -613,13 +615,29 @@ textarea.form-control {
     vertical-align: middle;
     display: inline-block; }
 
+.info_text {
+  padding-right: 8px;
+  padding-top: 20px; }
+  .info_text a {
+    color: #598527;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: underline;
+    letter-spacing: -0.25px; }
+    .info_text a:hover {
+      text-decoration: none; }
+  .info_text span:first-child {
+    padding-top: 3px;
+    vertical-align: middle;
+    display: inline-block; }
+
 .m-b {
   margin-top: 40px; }
 
 .navigation {
   max-width: 325px;
   display: block;
-  margin: 0 auto; }
+  margin: 0 auto 40px; }
   .navigation .step {
     color: #92b523;
     font-size: 48px;
@@ -707,3 +725,38 @@ textarea.form-control {
   left: -100px; }
   .nextArrow span {
     right: -8px; }
+
+.capture_wrapper {
+  width: 314px;
+  margin: 30px auto; }
+
+.capture {
+  background: url(../img/bg_camera.png) center/cover no-repeat;
+  height: 298px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .capture img {
+    margin: 0 auto;
+    display: block; }
+  .capture__container {
+    margin: auto; }
+  .capture__activate {
+    border: none;
+    font-family: 'Assistant';
+    border-radius: 20px;
+    background: #fe7900;
+    color: #fff;
+    -webkit-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
+    font-size: 22px;
+    padding: 3px 22px 5px;
+    display: block;
+    margin-top: 15px;
+    cursor: pointer;
+    outline: none; }
+    .capture__activate:hover, .capture__activate:focus, .capture__activate:active {
+      background: #e06e03; }

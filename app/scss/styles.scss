@@ -120,6 +120,7 @@ body {
     border: none;
     border-radius: 30px;
     background: #92b523;
+    font-family: 'Assistant';
     color: #fff;
     box-shadow: 6px 6px 20px #bfbfbf;
     transition: .4s;
@@ -142,6 +143,7 @@ body {
     border: none;
     border-radius: 20px;
     background: #c5c5c5;
+    font-family: 'Assistant';
     color: #fff;    
     transition: .4s;
     font-size: 20px;
@@ -167,8 +169,63 @@ body {
     }
 }
 
+.info_text {
+    padding-right: 8px;
+    padding-top: 20px;
+    a {        
+        color: #598527;    
+        font-size: 16px;
+        font-weight: 400;
+        text-decoration: underline;
+        letter-spacing: -0.25px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    
+    span:first-child {
+        padding-top:3px;
+        vertical-align: middle;
+        display: inline-block;
+    }
+}
+
 .m-b {
     margin-top: 40px
 }
 
 @import 'navigation';
+
+.capture_wrapper {
+    width: 314px;
+    margin: 30px auto;
+}
+.capture {
+    background: url(../img/bg_camera.png) center / cover no-repeat;
+    height: 298px;    
+    display: flex;
+    img {
+        margin: 0 auto;
+        display: block;
+    }
+    &__container {
+        margin: auto;
+    }
+    &__activate {
+        border: none;
+        font-family: 'Assistant';
+        border-radius: 20px;
+        background: #fe7900;
+        color: #fff;    
+        transition: .4s;
+        font-size: 22px;
+        padding: 3px 22px 5px;
+        display: block;
+        margin-top: 15px;
+        cursor: pointer;
+        outline: none;
+        &:hover, &:focus, &:active {
+            background: #e06e03;
+        }    
+    }
+}
