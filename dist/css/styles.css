@@ -557,6 +557,21 @@ textarea.form-control {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 1% 2%; }
+  .form input[type="text"]::-webkit-input-placeholder,
+  .form .select-placeholder {
+    color: #131c25; }
+  .form input[type="text"]::-moz-placeholder,
+  .form .select-placeholder {
+    color: #131c25; }
+  .form input[type="text"]:-ms-input-placeholder,
+  .form .select-placeholder {
+    color: #131c25; }
+  .form input[type="text"]::-ms-input-placeholder,
+  .form .select-placeholder {
+    color: #131c25; }
+  .form input[type="text"]::placeholder,
+  .form .select-placeholder {
+    color: #131c25; }
   .form .group {
     max-width: 62%;
     margin: 0 auto;
@@ -612,7 +627,6 @@ textarea.form-control {
     background: #c7c8c9; }
   .select-container .select-placeholder {
     font-size: 18px;
-    color: #9ca3a9;
     position: absolute;
     right: 13px;
     top: 5px;
@@ -721,11 +735,7 @@ textarea.form-control {
     -webkit-transition: .4s;
     -o-transition: .4s;
     transition: .4s;
-    border-radius: 34px;
-    /* .symbol-no {
-        transition: 1s;
-        opacity: 1;
-      }  */ }
+    border-radius: 34px; }
     .switch .slider::before {
       content: "";
       position: absolute;
@@ -738,6 +748,11 @@ textarea.form-control {
       -o-transition: .4s;
       transition: .4s;
       border-radius: 50%; }
+    .switch .slider .symbol-no {
+      -webkit-transition: 1s;
+      -o-transition: 1s;
+      transition: 1s;
+      opacity: 1; }
   .switch .symbol {
     position: absolute;
     color: #fff;
@@ -763,6 +778,23 @@ textarea.form-control {
   position: absolute;
   left: 21px;
   top: 7px; }
+
+.error {
+  background-color: #fef2f2; }
+  .error::-webkit-input-placeholder {
+    color: #ed1c24 !important; }
+  .error::-moz-placeholder {
+    color: #ed1c24 !important; }
+  .error:-ms-input-placeholder {
+    color: #ed1c24 !important; }
+  .error::-ms-input-placeholder {
+    color: #ed1c24 !important; }
+  .error::placeholder {
+    color: #ed1c24 !important; }
+  .error.calendar {
+    background: #fef2f2 url(../img/calendar_icon.png) 10px center no-repeat; }
+  .error.select-container .select-placeholder {
+    color: #ed1c24; }
 
 .text {
   color: #131c25;

@@ -65,4 +65,30 @@ document.addEventListener('DOMContentLoaded', function() {
             commnetTextarea.value = ''
         })
     }
+
+    let submit_form2 = document.querySelector('.form_step2');
+    submit_form2.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let requiredFields = document.querySelectorAll('.required');
+        requiredFields.forEach( (field) => {
+            if (field.value == '') {
+                if ( field.nodeName == 'SELECT' ) {
+                    field.closest('.select-container').classList.add('error');
+                    field.addEventListener('change', function() {
+                        if (this.nodeName == 'SELECT' && this.value != '') {
+                            this.closest('.select-container').classList.remove('error');
+                        }
+                    })
+                } else { 
+                    field.classList.add('error')
+                    field.addEventListener('keypress', function() {
+                        if (this.nodeName == 'INPUT') {
+                            this.classList.remove('error');
+                        }
+                    })
+                }
+            }            
+        })
+    })
+
 })

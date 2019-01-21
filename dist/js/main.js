@@ -67,4 +67,29 @@ document.addEventListener('DOMContentLoaded', function () {
             commnetTextarea.value = '';
         });
     }
+
+    var submit_form2 = document.querySelector('.form_step2');
+    submit_form2.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var requiredFields = document.querySelectorAll('.required');
+        requiredFields.forEach(function (field) {
+            if (field.value == '') {
+                if (field.nodeName == 'SELECT') {
+                    field.closest('.select-container').classList.add('error');
+                    field.addEventListener('change', function () {
+                        if (this.nodeName == 'SELECT' && this.value != '') {
+                            this.closest('.select-container').classList.remove('error');
+                        }
+                    });
+                } else {
+                    field.classList.add('error');
+                    field.addEventListener('keypress', function () {
+                        if (this.nodeName == 'INPUT') {
+                            this.classList.remove('error');
+                        }
+                    });
+                }
+            }
+        });
+    });
 });

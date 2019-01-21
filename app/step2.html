@@ -76,13 +76,13 @@
                         פרטים אישיים
                 </div>
 
-                <div class="form">
+                <div class="form form_step2">
                     <form method="POST">
                         <div class="group flex-container">
-                            <input type="text" name="name" placeholder="שם פרטי" class="form-control">
-                            <input type="text" name="surname" placeholder="שם משפחה" class="form-control">
-                            <input type="text" name="id" placeholder="מס' זהות" class="form-control">
-                            <input type="text" id="birthday" placeholder="תאריך לידה" class="form-control calendar">
+                            <input type="text" name="name" placeholder="שם פרטי" class="required form-control">
+                            <input type="text" name="surname" placeholder="שם משפחה" class="required form-control">
+                            <input type="text" name="id" placeholder="מס' זהות" class="required form-control">
+                            <input type="text" id="birthday" placeholder="תאריך לידה" class="required form-control calendar">
                         </div>
                         <div class="group">
                             <div class="radio_box">
@@ -106,12 +106,12 @@
                             </span>
                         </div>
                         <div class="group flex-container m-b25">
-                            <input type="text" name="address" placeholder="רחוב, מספר, עיר" class="form-control">
+                            <input type="text" name="address" placeholder="רחוב, מספר, עיר" class="required form-control">
                             <div class="select-container">
                                 <div class="select-placeholder">
                                         ישראל
                                 </div>
-                                <select name="city" class="form-control select-control js-select-custom">
+                                <select name="city" class="required form-control select-control js-select-custom">
                                     
                                     <option value="Moscow">Moscow</option>
                                     <option value="Piter">Piter</option>
@@ -121,7 +121,7 @@
                                 <div class="select-placeholder">
                                         מהי מדינת התושבות שלך?
                                 </div>
-                                <select name="country" class="form-control select-control js-select-custom">
+                                <select name="country" class="required form-control select-control js-select-custom">
                                     <option value=""></option>
                                     <option value="Canada">Canada</option>
                                     <option value="Korea">Korea</option>
@@ -132,7 +132,7 @@
                                 <div class="select-placeholder">
                                         מהי זיקתך לישראל ?
                                 </div>
-                                <select name="relationIsrael" class="form-control select-control js-select-custom">
+                                <select name="relationIsrael" class="required form-control select-control js-select-custom">
                                     <option value=""></option>
                                     <option value="Canada">Somehow</option>                                    
                                 </select>
@@ -161,8 +161,8 @@
                             <label class="switch">
                                 <input type="checkbox" name="senior" >
                                 <span class="slider round">
-                                    <span class="symbol symbol-yes">&#10004;</span>
-                                    <span class="symbol symbol-no">&#10008;</span>
+                                    <span class="symbol symbol-yes">	&#10004;</span>
+                                    <span class="symbol symbol-no">&#10006;</span>
                                 </span>
                             </label>                       
                             <span class="plain_text">לא</span>
@@ -172,7 +172,7 @@
                             <textarea name="comment" id="comment" class="form-control" placeholder="פירוט, הזן טקסט"></textarea>
                         </div>
 
-                        <button type="submit" class="button_submit m-b">
+                        <button type="submit" class="button_submit m-b step2">
                                 המשך
                         </button>
                     </form>
