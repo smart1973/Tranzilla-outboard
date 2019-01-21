@@ -79,6 +79,9 @@ body {
 .flex-start {
     justify-content: flex-start;
 }
+.flex-right {
+    margin-left: auto !important;
+}
 .items {
     display: flex;
     .item {

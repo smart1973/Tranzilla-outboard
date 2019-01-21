@@ -431,6 +431,9 @@ body {
   -ms-flex-pack: start;
   justify-content: flex-start; }
 
+.flex-right {
+  margin-left: auto !important; }
+
 .items {
   display: -webkit-box;
   display: -webkit-flex;
