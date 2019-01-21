@@ -853,17 +853,27 @@ textarea.form-control {
 .text-center {
   text-align: center; }
 
+.block {
+  display: block !important; }
+
 .info_text {
   padding-right: 8px;
-  padding-top: 20px; }
+  padding-top: 20px;
+  display: none; }
   .info_text a {
     color: #598527;
     font-size: 16px;
     font-weight: 400;
     text-decoration: underline;
-    letter-spacing: -0.25px; }
+    letter-spacing: -0.25px;
+    display: inline-block;
+    vertical-align: top; }
     .info_text a:hover {
       text-decoration: none; }
+  .info_text.gray a {
+    color: #959595; }
+  .info_text.orange a {
+    color: #f26522; }
   .info_text span:first-child {
     padding-top: 3px;
     vertical-align: middle;
@@ -1038,6 +1048,8 @@ textarea.form-control {
       color: #707070;
       font-size: 28px;
       padding: 3px 31px; }
+    .overlay .modal .button_submit {
+      cursor: url(../img/hand.png), pointer; }
     .overlay .modal .close-modal {
       background: url(../img/close.png) no-repeat;
       position: absolute;

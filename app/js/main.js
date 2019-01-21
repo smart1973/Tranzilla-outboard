@@ -67,54 +67,58 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     let birthday = document.getElementById('birthday');
-    birthday.addEventListener('keypress', function(e) {
-        e.preventDefault();
-    })
+    if (birthday) {
+        birthday.addEventListener('keypress', function(e) {
+            e.preventDefault();
+        })
+    }
 
     let submit_form2 = document.querySelector('.form_step2');
-    submit_form2.addEventListener('submit', (e) => {
-        e.preventDefault();
-        let requiredFields = document.querySelectorAll('.required');
-        requiredFields.forEach( (field) => {
-            if (field.value == '') {
-                if ( field.nodeName == 'SELECT' ) {
-                    field.closest('.select-container').classList.add('error');
-                    field.addEventListener('change', function() {
-                        if (this.nodeName == 'SELECT' && this.value != '') {
-                            this.closest('.select-container').classList.remove('error');
-                        }
-                    })
-                } else { 
-                    field.classList.add('error')
-                    field.addEventListener('input', function() {
-                        if (this.nodeName == 'INPUT') {
-                            this.classList.remove('error');
-                        }
+    if (submit_form2) {
+        submit_form2.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let requiredFields = document.querySelectorAll('.required');
+            requiredFields.forEach( (field) => {
+                if (field.value == '') {
+                    if ( field.nodeName == 'SELECT' ) {
+                        field.closest('.select-container').classList.add('error');
+                        field.addEventListener('change', function() {
+                            if (this.nodeName == 'SELECT' && this.value != '') {
+                                this.closest('.select-container').classList.remove('error');
+                            }
+                        })
+                    } else { 
+                        field.classList.add('error')
+                        field.addEventListener('input', function() {
+                            if (this.nodeName == 'INPUT') {
+                                this.classList.remove('error');
+                            }
+                        })
+                    }
+                }            
+            })
+
+            let errors = document.querySelectorAll('.error');
+            if (errors.length === 0) {
+                console.log(birthday.value);
+                let data = birthday.value.split('/');
+                let d = data[0];
+                let m = data[1];
+                let y = data[2];
+                let nowDate = new Date();
+                let selectedBirthday = new Date(y, m, d);
+                let age = parseInt( (nowDate - selectedBirthday) / 1000 / 60 / 60 / 24 / 365 );
+                if (age < 18) {
+                    let forAdultsMessage = document.querySelector('.overlay');
+                    forAdultsMessage.classList.add('show');
+
+                    let closeModal = document.querySelector('.close-modal');
+                    closeModal.addEventListener('click', () => {
+                        forAdultsMessage.classList.remove('show');
                     })
                 }
-            }            
-        })
-
-        let errors = document.querySelectorAll('.error');
-        if (errors.length === 0) {
-            console.log(birthday.value);
-            let data = birthday.value.split('/');
-            let d = data[0];
-            let m = data[1];
-            let y = data[2];
-            let nowDate = new Date();
-            let selectedBirthday = new Date(y, m, d);
-            let age = parseInt( (nowDate - selectedBirthday) / 1000 / 60 / 60 / 24 / 365 );
-            if (age < 18) {
-                let forAdultsMessage = document.querySelector('.overlay');
-                forAdultsMessage.classList.add('show');
-
-                let closeModal = document.querySelector('.close-modal');
-                closeModal.addEventListener('click', () => {
-                    forAdultsMessage.classList.remove('show');
-                })
             }
-        }
-    })
+        })
+    }
 
 })
