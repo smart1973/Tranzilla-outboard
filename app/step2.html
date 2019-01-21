@@ -26,6 +26,25 @@
         </div>
     </div>
 
+    <div class="overlay">        
+        <div class="modal for_adults">
+            <span class="close-modal"></span>
+            <div class="message">
+                    המערכת זיהתה שהנך מתחת לגיל 18.
+                    לצערנו, קטנים אינם מורשים להגיש בקשה.
+                    במידה והזנת תאריך לידה שגוי - יש לתקנו,
+                    אחרת - יש להפסיק את תהליך הרישום.
+            </div>
+            <div class="inline-group">
+                    <button class="button_submit inline-group-block">
+                            כן
+                    </button>
+                    <button class="button_cancel inline-group-block">
+                            ביטול
+                    </button>
+                </div>
+        </div>
+    </div>
     <div class="wrapper">
 
         <header class="header ">
@@ -189,7 +208,7 @@
             var activeStep = 2;
             setActiveStep(activeStep);
             
-            $('.calendar').datepicker({
+            $('.calendar').datepicker({ //air datepicker
                 language: {                    
                     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
                     daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
@@ -201,8 +220,11 @@
                     dateFormat: 'mm/dd/yyyy',
                     timeFormat: 'hh:ii aa',
                     firstDay: 0
+                },
+                onSelect: function(formattedDate, date) {
+                    $('.calendar').removeClass('error');                    
                 }
-            })
+            })         
         })
     </script>
 </body>

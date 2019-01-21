@@ -68,6 +68,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    var birthday = document.getElementById('birthday');
+    birthday.addEventListener('keypress', function (e) {
+        e.preventDefault();
+    });
+
     var submit_form2 = document.querySelector('.form_step2');
     submit_form2.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -83,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 } else {
                     field.classList.add('error');
-                    field.addEventListener('keypress', function () {
+                    field.addEventListener('input', function () {
                         if (this.nodeName == 'INPUT') {
                             this.classList.remove('error');
                         }
@@ -91,5 +96,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
+
+        var errors = document.querySelectorAll('.error');
+        if (errors.length === 0) {
+            console.log(birthday.value);
+            var data = birthday.value.split('/');
+            var d = data[0];
+            var m = data[1];
+            var y = data[2];
+            var nowDate = new Date();
+            var selectedBirthday = new Date(y, m, d);
+            var age = parseInt((nowDate - selectedBirthday) / 1000 / 60 / 60 / 24 / 365);
+            if (age < 18) {
+                var forAdultsMessage = document.querySelector('.overlay');
+                forAdultsMessage.classList.add('show');
+
+                var closeModal = document.querySelector('.close-modal');
+                closeModal.addEventListener('click', function () {
+                    forAdultsMessage.classList.remove('show');
+                });
+            }
+        }
     });
 });
