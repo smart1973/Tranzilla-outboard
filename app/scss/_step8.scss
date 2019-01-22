@@ -1,0 +1,82 @@
+.table {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    border-spacing: 0;
+    border-bottom: 1px solid #d7d7d7;
+    th, td {
+        border: solid #d7d7d7;
+        border-width: 1px 0 0 1px;        
+        color: #131c25;
+        font-family: Assistant;
+        font-size: 18px;        
+        line-height: 46.4px;
+        text-transform: uppercase;
+    }
+    td {
+        font-weight: 400;
+    }
+    td:first-child, th:first-child {
+        border-right-width: 1px;
+    }    
+}
+
+.table__checkbox {
+    display: block;
+    position: relative;    
+    cursor: pointer;
+    height: 100%;
+    font-size: 22px;
+    user-select: none;
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        &:checked ~ .checkmark {
+            background-color: #fff;
+            &:hover {
+              background: transparent;
+            }
+        }
+        &:checked ~ .checkmark:after {
+            display: block;
+        }
+    }
+    .checkmark {
+        position: absolute;
+        top: -12.5px;
+        right: calc(50% - 12.5px);
+        height: 25px;
+        width: 25px;
+        box-shadow: inset 1px 2px 5px rgba(0, 0, 0, 0.11);
+        border-radius: 3px;
+        border: 1px solid #cccccc;
+        background-color: #ffffff;
+        &:after {
+          content: "";
+          position: absolute;
+          display: none;    
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid #000;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);      
+        }
+    }
+    &:hover input ~ .checkmark {
+        background-color: #ebebeb;
+    }
+}
+
+.radio_description {
+    p {
+        display: none;
+    }
+    #descr_right1 {
+        color: #f26522;
+    }
+}
