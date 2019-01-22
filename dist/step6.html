@@ -76,7 +76,7 @@
                         תחום העיסוק
                 </div>
 
-                <div class="form form_step2">
+                <div class="form form_valid">
                     <form method="POST">
                         <div class="group">                            
                             <div class="select-container full-width">
@@ -140,8 +140,112 @@
                             </div> -->
                         </div>
                         
+                        
+                        <div class="text group m-b">
+                            <span class="outside">
+                                <img src="img/q.png" alt="כתובת מגורים" class="question">                
+                            </span>&nbsp;
+                            <span>
+                                    האם מקבל/קיבלת שירותי סליקה כיום או בעבר ? 
+                            </span>
+                        </div>
+                        <div class="group m-b25 checkbox-container">
+                            <span class="plain_text">כן</span>
+                            <label class="switch">
+                                <input type="checkbox" name="service" checked>
+                                <span class="slider round">
+                                    <span class="symbol symbol-yes">	&#10004;</span>
+                                    <span class="symbol symbol-no">&#10006;</span>
+                                </span>
+                            </label>                       
+                            <span class="plain_text">לא</span>
+                        </div>
 
-                        <button type="submit" class="button_submit m-b step2">
+
+                        
+                        <div class="group m-b">
+                            <div class="select-container full-width">
+                                <div class="select-placeholder">
+                                        חברת סליקה
+                                </div>
+                                <select name="supplier" class="required form-control select-control js-select-custom">                                    
+                                    <option value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="group m-b25">
+                            <div class="select-container full-width">
+                                <div class="select-placeholder">
+                                        מספר הספק
+                                </div>
+                                <select name="supplier" class="required form-control select-control js-select-custom">                                    
+                                    <option value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        
+                        <div class="text group m-b">
+                            <span class="outside">
+                                <img src="img/q.png" alt="כתובת מגורים" class="question">                
+                            </span>&nbsp;
+                            <span>
+                                    רוצה להעביר את מספר הספק לטרנזילה? 
+                            </span>
+                        </div>
+
+                        <div class="group m-b25 checkbox-container">
+                            <span class="plain_text">כן</span>
+                            <label class="switch">
+                                <input type="checkbox" name="transfer" checked>
+                                <span class="slider round">
+                                    <span class="symbol symbol-yes">	&#10004;</span>
+                                    <span class="symbol symbol-no">&#10006;</span>
+                                </span>
+                            </label>                       
+                            <span class="plain_text">לא</span>
+                        </div>
+
+                        
+                        <div class="text group m-b25">
+                            <span class="outside">
+                                <img src="img/q.png" alt="כתובת מגורים" class="question">                
+                            </span>&nbsp;
+                            <span>
+                                    האם בית העסק סורב לפעילות בנקאית בתאגיד אחר ? 
+                            </span>
+                        </div>
+                        <div class="group m-b25 checkbox-container">
+                            <span class="plain_text">כן</span>
+                            <label class="switch">
+                                <input type="checkbox" name="failure_earlier" checked>
+                                <span class="slider round">
+                                    <span class="symbol symbol-yes">	&#10004;</span>
+                                    <span class="symbol symbol-no">&#10006;</span>
+                                </span>
+                            </label>                       
+                            <span class="plain_text">לא</span>
+                        </div>
+
+                        <div class="group m-b25">
+                            <div class="select-container full-width">
+                                <div class="select-placeholder">
+                                        בחר סיבה
+                                </div>
+                                <select name="supplier" class="required form-control select-control js-select-custom">                                    
+                                    <option value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="button_submit m-b step6">
                                 המשך
                         </button>
                     </form>

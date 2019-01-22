@@ -73,9 +73,9 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     }
 
-    let submit_form2 = document.querySelector('.form_step2');
-    if (submit_form2) {
-        submit_form2.addEventListener('submit', (e) => {
+    let valid_form = document.querySelector('.form_valid');
+    if (valid_form) {
+        valid_form.addEventListener('submit', (e) => {
             e.preventDefault();
             let requiredFields = document.querySelectorAll('.required');
             requiredFields.forEach( (field) => {

@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    var submit_form2 = document.querySelector('.form_step2');
-    if (submit_form2) {
-        submit_form2.addEventListener('submit', function (e) {
+    var valid_form = document.querySelector('.form_valid');
+    if (valid_form) {
+        valid_form.addEventListener('submit', function (e) {
             e.preventDefault();
             var requiredFields = document.querySelectorAll('.required');
             requiredFields.forEach(function (field) {
