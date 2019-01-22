@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tranzilla</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap-slider.min.css">
+</head>
+<body>
+    <div class="loader">
+        <div id="circularG">
+            <div id="circularG_1" class="circularG"></div>
+            <div id="circularG_2" class="circularG"></div>
+            <div id="circularG_3" class="circularG"></div>
+            <div id="circularG_4" class="circularG"></div>
+            <div id="circularG_5" class="circularG"></div>
+            <div id="circularG_6" class="circularG"></div>
+            <div id="circularG_7" class="circularG"></div>
+            <div id="circularG_8" class="circularG"></div>
+            <div id="loading">
+                0 %
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+
+        <header class="header ">
+            <div class="container header-container">
+                <a href="/">
+                    <img src="img/logo.png" alt="logo">
+                </a>
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="img/menu3.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/menu2.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/menu1.png" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>      
+
+        <div class="container">
+            <div class="h1">
+                    דף מכירה
+            </div>
+            <div class="content">
+                <div class="navigation">
+                    <div class="step step10"><a href="/step10.html"> 10 </a></div>
+                    <div class="step step9"><a href="/step9.html"> 9 </a></div>
+                    <div class="step step8"><a href="/step8.html"> 8 </a></div>
+                    <div class="step step7"><a href="/step7.html"> 7 </a></div>
+                    <div class="step step6"><a href="/step6.html"> 6 </a></div>
+                    <div class="step step5"><a href="/step5.html"> 5 </a></div>
+                    <div class="step step4"><a href="/step4.html"> 4 </a></div>
+                    <div class="step step3"><a href="/step3.html"> 3 </a></div>
+                    <div class="step step2"><a href="/step2.html"> 2 </a></div>
+                    <div class="step step1"><a href="/step1.html"> 1 </a></div>
+                </div>
+                <div class="title">
+                        תחום העיסוק
+                </div>
+
+                <div class="form form_step2">
+                    <form method="POST">
+                        <div class="group">                            
+                            <div class="select-container full-width">
+                                <div class="select-placeholder"></div>
+                                <select name="supplier" class="required form-control select-control js-select-custom">                                    
+                                    <option value="1">אופנה</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </div>
+                            
+                            <textarea name="" placeholder="פירוט" class="form-control"></textarea>
+                        </div>
+                        
+                        <div class="text group m-b">
+                            <span class="outside hidden">
+                                <img src="img/q.png" alt="כתובת מגורים" class="question">                
+                            </span>&nbsp;
+                            <span>
+                                    זמן אספקה ממוצע של השירות: 
+                            </span>
+                        </div>
+
+                        <div class="group">
+                            <div class="select-container ">
+                                <div class="select-placeholder">
+                                        זמן אספקה ממוצה
+                                </div>
+                                <select name="supplier" class="required form-control select-control js-select-custom">                                    
+                                    <option value=""></option>
+                                    <option value="1">30</option>
+                                    <option value="2">60</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="text group m-b">
+                            <span class="outside hidden">
+                                <img src="img/q.png" alt="כתובת מגורים" class="question">                
+                            </span>&nbsp;
+                            <span>
+                                    סכום עסקה ממוצע צפוי (בחר/י את הקרוב ביותר) : 
+                            </span>
+                        </div>
+
+                        <div class="group" >
+
+                            <input id="ex13" type="text" />
+                            <!-- <div class="range">
+                                <div class="range_value">
+                                    <span class="value">100</span>
+                                    <span>₪</span>
+                                </div>
+                                <input id="range_slider" type="range" min="1" max="100" step="2" value="0" class="slider">
+                                <div class="sliderticks">
+                                    <p>100</p>
+                                    <p>250</p>
+                                    <p>500</p>
+                                    <p>1000</p>
+                                    <p>>&nbsp;1000</p>                                    
+                                </div>
+                            </div> -->
+                        </div>
+                        
+
+                        <button type="submit" class="button_submit m-b step2">
+                                המשך
+                        </button>
+                    </form>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/slick.min.js"></script>    
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap-slider.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var activeStep = 6;
+            setActiveStep(activeStep);
+            $('.navigation').slick('slickGoTo', 4);
+
+            $("#ex13").slider({
+                ticks: [100, 250, 500, 1000, 1025],
+                ticks_labels: ["100 ₪", "250 ₪", "500 ₪", "1000 ₪", "מעל 1.000 ₪"],
+                ticks_positions: [0, 25, 50, 75, 100],
+                step: 25,                
+            });
+          /*   $('#range_slider').change(function() {
+                var value = $(this).val() * 10;
+                $('.range_value .value').text(value);
+            }); */
+        });
+
+
+    </script>
+</body>
+</html>

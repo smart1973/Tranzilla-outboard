@@ -17,6 +17,14 @@ body {
   font-family: 'Assistant';
   overflow-x: hidden; }
 
+output {
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0;
+  width: 100%; }
+
 .loader {
   display: -webkit-box;
   display: -webkit-flex;
@@ -560,6 +568,9 @@ textarea.form-control {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 1% 2%; }
+  .form .select-container.full-width {
+    width: 100%;
+    max-width: 622px; }
   .form input[type="text"]::-webkit-input-placeholder,
   .form .select-placeholder {
     color: #131c25; }
@@ -584,14 +595,32 @@ textarea.form-control {
     -ms-flex-pack: center;
     justify-content: center;
     position: relative; }
+    .form .group p {
+      padding-right: 8px;
+      font-size: 18px; }
+      .form .group p a {
+        color: #598527;
+        text-decoration: underline; }
+        .form .group p a:hover {
+          text-decoration: none; }
     .form .group textarea {
-      margin: 0 2% !important;
+      margin: 20px 2% !important;
       max-width: 597px;
       min-height: 120px;
       resize: vertical;
       font-family: Assistant;
       font-size: 18px;
       font-weight: 400; }
+      .form .group textarea::-webkit-input-placeholder {
+        color: #131c25; }
+      .form .group textarea::-moz-placeholder {
+        color: #131c25; }
+      .form .group textarea:-ms-input-placeholder {
+        color: #131c25; }
+      .form .group textarea::-ms-input-placeholder {
+        color: #131c25; }
+      .form .group textarea::placeholder {
+        color: #131c25; }
 
 .inline-group {
   display: -webkit-box;
@@ -701,6 +730,9 @@ textarea.form-control {
 .outside {
   margin-right: -10px; }
 
+.hidden {
+  visibility: hidden; }
+
 .switch {
   position: relative;
   display: inline-block;
@@ -746,7 +778,7 @@ textarea.form-control {
       width: 24px;
       left: 4px;
       bottom: 2px;
-      background-color: #ed6464;
+      background-color: #ed1c24;
       -webkit-transition: .4s;
       -o-transition: .4s;
       transition: .4s;
@@ -798,6 +830,106 @@ textarea.form-control {
     background: #fef2f2 url(../img/calendar_icon.png) 10px center no-repeat; }
   .error.select-container .select-placeholder {
     color: #ed1c24; }
+
+.inline-radio-chekcboxes {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 25px auto 0;
+  max-width: 62%; }
+  .inline-radio-chekcboxes input {
+    width: 31px;
+    height: 31px;
+    -webkit-box-shadow: inset 1px 2px 5px rgba(0, 0, 0, 0.11);
+    box-shadow: inset 1px 2px 5px rgba(0, 0, 0, 0.11);
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    -ms-appearance: checkbox;
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    appearance: checkbox; }
+  .inline-radio-chekcboxes .item {
+    margin: 0 2%; }
+
+.checkbox-wrapper {
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .checkbox-wrapper + span {
+    margin-right: 35px; }
+  .checkbox-wrapper input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0; }
+    .checkbox-wrapper input:checked ~ .border-arrow {
+      visibility: visible; }
+    .checkbox-wrapper input:checked ~ .checkmark {
+      background-color: #fff; }
+      .checkbox-wrapper input:checked ~ .checkmark:hover {
+        background: transparent; }
+    .checkbox-wrapper input:checked ~ .checkmark:after {
+      display: block; }
+  .checkbox-wrapper .checkmark {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    height: 25px;
+    width: 25px;
+    -webkit-box-shadow: inset 1px 2px 5px rgba(0, 0, 0, 0.11);
+    box-shadow: inset 1px 2px 5px rgba(0, 0, 0, 0.11);
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+    background-color: #ffffff; }
+    .checkbox-wrapper .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid #000;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg); }
+  .checkbox-wrapper:hover input ~ .checkmark {
+    background-color: #e0e0e0; }
+  .checkbox-wrapper .border-arrow {
+    position: relative;
+    visibility: hidden; }
+    .checkbox-wrapper .border-arrow:before {
+      content: '';
+      position: absolute;
+      border: solid transparent;
+      border-bottom-color: #ccc;
+      border-width: 0 13px 15px 13px;
+      top: 53px;
+      left: -28px;
+      z-index: 100; }
+    .checkbox-wrapper .border-arrow:after {
+      content: '';
+      position: absolute;
+      border: solid transparent;
+      border-bottom-color: #fff;
+      border-width: 0 12px 14px 12px;
+      top: 56px;
+      left: -27px;
+      z-index: 100; }
 
 .text {
   color: #131c25;
@@ -1065,3 +1197,8 @@ textarea.form-control {
     color: #131c25;
     font-family: Assistant;
     font-size: 28px; }
+
+#additional_fields {
+  display: none; }
+
+/* @import 'range_slider'; */

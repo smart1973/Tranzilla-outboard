@@ -18,6 +18,14 @@ body {
     font-family: 'Assistant';
     overflow-x: hidden;
 }
+output {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 30px 0;
+    width: 100%;
+}
 .loader {
     display: flex;
     display: none;
@@ -333,3 +341,9 @@ body {
         font-size: 28px;
     }
 }
+
+#additional_fields {
+    display: none;
+}
+
+/* @import 'range_slider'; */

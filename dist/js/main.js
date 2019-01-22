@@ -122,4 +122,20 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    /* step 5 */
+
+    var hasPolitic = document.getElementById('has_politic');
+    if (hasPolitic) {
+        //let addFields = document.getElementById('additional_fields');
+        var addFields = $('#additional_fields');
+        if (hasPolitic.checked) addFields.fadeIn();
+        hasPolitic.addEventListener('change', function () {
+            if (this.checked) {
+                addFields.slideDown();
+            } else {
+                addFields.slideUp();
+            }
+        });
+    }
 });
