@@ -425,11 +425,11 @@ body {
   display: flex; }
 
 .flex-start {
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -moz-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start; }
+  -webkit-box-pack: start !important;
+  -webkit-justify-content: flex-start !important;
+  -moz-box-pack: start !important;
+  -ms-flex-pack: start !important;
+  justify-content: flex-start !important; }
 
 .flex-right {
   margin-left: auto !important; }
@@ -1266,4 +1266,93 @@ textarea.form-control {
   display: none; }
 
 .radio_description #descr_right1 {
+  color: #f26522; }
+
+.form9 .group {
+  max-width: 62%;
+  margin: 0 auto; }
+  .form9 .group p {
+    font-size: 18px; }
+  .form9 .group ul {
+    list-style-image: url(../img/list.png);
+    line-height: 2;
+    padding: 0;
+    color: #131c25;
+    font-size: 18px; }
+  .form9 .group a {
+    color: #598527; }
+
+.input_block {
+  position: relative;
+  margin: 1% 2%;
+  width: 46%; }
+  .input_block.half-width {
+    width: 23%; }
+  .input_block.full-width {
+    width: 73%; }
+  .input_block:first-child {
+    margin-right: 0; }
+  .input_block:last-child {
+    margin-left: 0; }
+  .input_block input {
+    display: block;
+    padding: 0;
+    height: 34px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: none;
+    font-size: 18px;
+    color: #131c25;
+    outline: none;
+    width: 100%; }
+    .input_block input:focus + label span {
+      font-size: 14px;
+      top: -10px; }
+  .input_block label {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%; }
+    .input_block label span {
+      display: block;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      font-size: 18px;
+      line-height: 1;
+      color: #131c25;
+      position: absolute;
+      top: 10px; }
+
+.has_value + label span {
+  font-size: 14px;
+  top: -10px; }
+
+hr {
+  border-top: 1px solid #ccc;
+  margin: 60px auto;
+  width: 80%; }
+
+.inline-group-block .checkmark {
+  top: 17px; }
+
+.m-r-30 {
+  margin-right: -30px; }
+
+#sheet {
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: -5px; }
+
+.align-bottom {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -moz-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end; }
+  .align-bottom .input_block:first-child {
+    margin-bottom: 65px; }
+
+.orange {
   color: #f26522; }

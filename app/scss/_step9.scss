@@ -1,0 +1,109 @@
+$width: 46%;
+$margin: 2%;
+$half-width: 46% / 2;
+$full-width: (46% * 2) + $margin * 2 - $half-width;
+
+.form9 .group {
+    max-width: 62%;
+    margin: 0 auto;
+    p {
+        font-size: 18px;        
+    }
+    ul {
+        list-style-image: url(../img/list.png);
+        line-height: 2;
+        padding: 0;
+        color: #131c25;
+        font-size: 18px
+    }
+    a {
+        color: #598527;
+    }
+}
+
+.input_block {
+    position: relative;
+    margin: 1% 2%;
+    &.half-width {
+        width: $half-width;
+    }
+    &.full-width {
+        width: $full-width;
+    }
+    &:first-child {
+        margin-right: 0;
+    }    
+    &:last-child {
+        margin-left: 0;
+    }
+    width: $width;
+    input {
+        display: block;
+        padding: 0;
+        height: 34px;        
+        border: none;
+        border-bottom: 1px solid #ccc;
+        background: none;        
+        font-size: 18px;
+        color:  #131c25;
+        outline: none;
+        width: 100%;
+        &:focus + label span {
+            font-size: 14px;
+            top: -10px;
+        }
+    }
+    label {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        span {
+            display: block;                 
+            transition: all 0.3s ease;            
+            font-size: 18px;
+            line-height: 1;
+            color:  #131c25;
+            position: absolute;
+            top: 10px;            
+        }
+    }
+}
+
+.has_value + label span {
+	font-size: 14px;
+	top: -10px;
+}
+
+hr {
+    border-top: 1px solid #ccc;
+    margin: 60px auto;
+    width: 80%;
+}
+
+.inline-group-block {
+    .checkmark {
+        top: 17px;
+    }
+}
+.m-r-30 {
+    margin-right: -30px;
+}
+
+#sheet {
+    border:1px solid #ccc;
+    width: 100%;
+  
+    margin-bottom: -5px;
+}
+
+.align-bottom {
+    align-items: flex-end;
+    .input_block:first-child {
+        margin-bottom: 65px;
+    }
+}
+.orange {
+    color: #f26522;
+}

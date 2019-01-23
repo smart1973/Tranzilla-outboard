@@ -169,5 +169,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
     }
+
+    /* step9 */
+
+    $('.input_block input').change(function() {
+        if($(this).val())
+            $(this).addClass('has_value');
+        else
+            $(this).removeClass('has_value');
+    });
     
 })
