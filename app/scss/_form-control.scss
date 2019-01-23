@@ -76,19 +76,23 @@
             }
           }
         }
+        &.group-textarea {
+          max-width: 60%;      
+        }
         textarea {
-          margin: 20px 2% !important;
-          max-width: 597px;          
+          margin: 20px auto !important;          
           min-height: 120px;
           resize: vertical;
           font-family: Assistant;
           font-size: 18px;
           font-weight: 400;
+          box-sizing: border-box;
           &::placeholder {
             color: #131c25;
           }
         }
     }
+    
   }
 
   .inline-group {
@@ -293,7 +297,7 @@
     height: 11px;
     cursor: pointer;
     position: absolute;
-    left: 21px;
+    left: 7px;
     top: 7px;
   }
 

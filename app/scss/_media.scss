@@ -7,10 +7,17 @@
     .form {
         .group {
             max-width: 80%;
+            &.group-textarea {
+                max-width: 78%;
+            }
         }
     }
     .logo {
         margin-left: 20px;
+    }
+
+    .inline-radio-chekcboxes {
+        max-width: 80%;
     }
 }
 
@@ -22,9 +29,11 @@
         display: none;
     }
     .form {
+        margin-top: 20px;
         input[type="text"], 
         .select-container {
             width: 100%;
+            margin: 2% 2%;
         }
     }
     .button_submit, .button_cancel {
@@ -71,6 +80,18 @@
             text-underline-position: under;
         }
     }
+    .inline-radio-chekcboxes {
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        .item {
+            margin: 2%;
+            width: 45%;
+        }
+        .border-arrow {
+            display: none;
+        }
+    }
 }
 
 
@@ -81,10 +102,12 @@
     .logo {
         margin-left: 10px;
     }
-    .form {
-        margin-top: 20px;
+    .form {        
         .group {
             max-width: 90%;
+            &.group-textarea {
+                max-width: 88%;
+            }
         }
     }
     .button_submit, .button_cancel {
@@ -111,4 +134,85 @@
             margin: 10px 0;
         }
     }    
+    .overlay {
+        .modal {
+            max-width: 92%;
+            padding: 60px 20px 30px;
+            box-sizing: border-box;
+        }
+    }
+    .inline-radio-chekcboxes {     
+        max-width: 90%;
+        .item {
+            margin: 2% 0;
+            width: 50%;
+        }
+    }
+}
+
+@media(max-width: 450px) {
+    .navigation {
+        max-width: 280px;
+        .step {
+            height: 54px;
+            font-size: 38px;
+        }
+    }
+    .arrowNav {
+        top: 16px;
+    }
+}
+
+@media(max-width: 390px) {
+    .navigation {
+        max-width: 250px;
+        .step {            
+            margin: 0 13px;
+            &:after {
+                width: 15px;
+                left: -15px;
+            }
+            &::before {
+                width: 15px;
+                right: -15px;
+            }
+        }
+    }
+    .arrowNav {
+        top: 16px;
+    }
+}
+
+@media(max-width: 350px) {
+    .navigation {
+        max-width: 210px;
+        .step {          
+            height: 46px;
+            font-size: 32px;  
+            margin: 0 10px;
+            &:after {
+                width: 12px;
+                left: -12px;
+            }
+            &::before {
+                width: 12px;
+                right: -12px;
+            }
+        }
+    }
+    .arrowNav {
+        top: 12px;
+        &.prevArrow {
+            right: -40px;
+        }
+        &.nextArrow {
+            left: -40px;
+        }
+    }
+    .capture_wrapper {
+        width: 284px;
+        .capture {
+            height: 268px;
+        }
+    }
 }

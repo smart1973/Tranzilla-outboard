@@ -15,7 +15,7 @@ body {
   background-color: #f2f4f7;
   direction: rtl;
   font-family: 'Assistant';
-  overflow-x: hidden; }
+  position: relative; }
 
 #circularG {
   position: relative;
@@ -696,14 +696,18 @@ textarea.form-control {
         text-decoration: underline; }
         .form .group p a:hover {
           text-decoration: none; }
+    .form .group.group-textarea {
+      max-width: 60%; }
     .form .group textarea {
-      margin: 20px 2% !important;
-      max-width: 597px;
+      margin: 20px auto !important;
       min-height: 120px;
       resize: vertical;
       font-family: Assistant;
       font-size: 18px;
-      font-weight: 400; }
+      font-weight: 400;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
       .form .group textarea::-webkit-input-placeholder {
         color: #131c25; }
       .form .group textarea::-moz-placeholder {
@@ -905,7 +909,7 @@ textarea.form-control {
   height: 11px;
   cursor: pointer;
   position: absolute;
-  left: 21px;
+  left: 7px;
   top: 7px; }
 
 .error {
@@ -1423,17 +1427,24 @@ hr {
 @media (max-width: 992px) {
   .form .group {
     max-width: 80%; }
+    .form .group.group-textarea {
+      max-width: 78%; }
   .logo {
-    margin-left: 20px; } }
+    margin-left: 20px; }
+  .inline-radio-chekcboxes {
+    max-width: 80%; } }
 
 @media (max-width: 768px) {
   .content {
     background: transparent; }
   .h1 {
     display: none; }
-  .form input[type="text"],
-  .form .select-container {
-    width: 100%; }
+  .form {
+    margin-top: 20px; }
+    .form input[type="text"],
+    .form .select-container {
+      width: 100%;
+      margin: 2% 2%; }
   .button_submit, .button_cancel {
     width: 77%; }
   .desktop {
@@ -1463,17 +1474,38 @@ hr {
   .info_text a {
     font-size: 20px;
     padding-top: 3px;
-    text-underline-position: under; } }
+    text-underline-position: under; }
+  .inline-radio-chekcboxes {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -moz-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
+    .inline-radio-chekcboxes .item {
+      margin: 2%;
+      width: 45%; }
+    .inline-radio-chekcboxes .border-arrow {
+      display: none; } }
 
 @media (max-width: 568px) {
   .content {
     padding: 30px 10px; }
   .logo {
     margin-left: 10px; }
-  .form {
-    margin-top: 20px; }
-    .form .group {
-      max-width: 90%; }
+  .form .group {
+    max-width: 90%; }
+    .form .group.group-textarea {
+      max-width: 88%; }
   .button_submit, .button_cancel {
     width: 87%; }
   .header .menu ul {
@@ -1491,4 +1523,62 @@ hr {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
     .inline-group .inline-group-block {
-      margin: 10px 0; } }
+      margin: 10px 0; }
+  .overlay .modal {
+    max-width: 92%;
+    padding: 60px 20px 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+  .inline-radio-chekcboxes {
+    max-width: 90%; }
+    .inline-radio-chekcboxes .item {
+      margin: 2% 0;
+      width: 50%; } }
+
+@media (max-width: 450px) {
+  .navigation {
+    max-width: 280px; }
+    .navigation .step {
+      height: 54px;
+      font-size: 38px; }
+  .arrowNav {
+    top: 16px; } }
+
+@media (max-width: 390px) {
+  .navigation {
+    max-width: 250px; }
+    .navigation .step {
+      margin: 0 13px; }
+      .navigation .step:after {
+        width: 15px;
+        left: -15px; }
+      .navigation .step::before {
+        width: 15px;
+        right: -15px; }
+  .arrowNav {
+    top: 16px; } }
+
+@media (max-width: 350px) {
+  .navigation {
+    max-width: 210px; }
+    .navigation .step {
+      height: 46px;
+      font-size: 32px;
+      margin: 0 10px; }
+      .navigation .step:after {
+        width: 12px;
+        left: -12px; }
+      .navigation .step::before {
+        width: 12px;
+        right: -12px; }
+  .arrowNav {
+    top: 12px; }
+    .arrowNav.prevArrow {
+      right: -40px; }
+    .arrowNav.nextArrow {
+      left: -40px; }
+  .capture_wrapper {
+    width: 284px; }
+    .capture_wrapper .capture {
+      height: 268px; } }

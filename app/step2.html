@@ -101,7 +101,7 @@
                             <input type="text" name="name" placeholder="שם פרטי" class="required form-control">
                             <input type="text" name="surname" placeholder="שם משפחה" class="required form-control">
                             <input type="text" name="id" placeholder="מס' זהות" class="required form-control">
-                            <input type="text" id="birthday" placeholder="תאריך לידה" class="required form-control calendar">
+                            <input type="text" id="birthday" autocomplete="off" placeholder="תאריך לידה" class="required form-control calendar">
                         </div>
                         <div class="group">
                             <div class="radio_box">
@@ -186,7 +186,7 @@
                             </label>                       
                             <span class="plain_text">לא</span>
                         </div>
-                        <div class="group m-b25">
+                        <div class="group group-textarea m-b25">
                             <span class="js-remove-text"></span>
                             <textarea name="comment" id="comment" class="form-control" placeholder="פירוט, הזן טקסט"></textarea>
                         </div>
@@ -207,6 +207,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             var activeStep = 2;
             setActiveStep(activeStep);
+            
+            
             
             $('.calendar').datepicker({ //air datepicker
                 language: {                    
