@@ -61,9 +61,13 @@
 }
 .items {
     display: flex;
+    &.center {
+        align-items:center; 
+        justify-content: center
+    }
     .item {
         text-align: center;
-        font-size: 19px;
+        font-size: 18px;
         font-weight: 700;
         margin: 0 20px;
     }

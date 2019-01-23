@@ -10,11 +10,13 @@ $full-width: (46% * 2) + $margin * 2 - $half-width;
         font-size: 18px;        
     }
     ul {
-        list-style-image: url(../img/list.png);
-        line-height: 2;
+        list-style-image: url(../img/list.png);        
         padding: 0;
         color: #131c25;
-        font-size: 18px
+        font-size: 18px;
+        li {
+            margin-bottom: 10px;
+        }
     }
     a {
         color: #598527;
