@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.styleSheets[0].addRule(selector, `content: ${value} !important;`);
     } */
 
-    if ($('.navigation')) {
+    if ($('.navigation') && !!$('.navigation').slick) {
         $('.navigation').slick({
             slidesToShow: 3,
             slidesToScrol: 1,
@@ -178,5 +178,32 @@ document.addEventListener('DOMContentLoaded', function() {
         else
             $(this).removeClass('has_value');
     });
+
+    /* all steps where there is question icon */
+    const replaceQuestionIcon = () => {
+        if ($(window).width() <= 768) {
+            $('img[src="img/q.png"]').attr('src', 'img/q_big.png')
+                                     .css('width', '30px');
+        } else {
+            $('img[src="img/q_big.png"]').attr('src', 'img/q.png')
+                                     .css('width', 'auto');
+        }
+    }
+    const replaceInfoIcon = () => {
+        if ($(window).width() <= 768) {
+            $('img[src="img/info.png"]').attr('src', 'img/info_big.png')
+                                     .css('width', '30px');
+        } else {
+            $('img[src="img/info_big.png"]').attr('src', 'img/info.png')
+                                     .css('width', 'auto');
+        }
+    }
+     replaceQuestionIcon();
+     replaceInfoIcon();
+    $(window).resize(() => {
+        replaceQuestionIcon();
+        replaceInfoIcon();
+    })
+    
     
 })

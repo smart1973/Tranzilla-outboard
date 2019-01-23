@@ -26,6 +26,8 @@
         margin-top: 15px;
         cursor: pointer;
         outline: none;
+        margin-left: auto;
+        margin-right: auto;
         &:hover, &:focus, &:active {
             background: #e06e03;
         }    

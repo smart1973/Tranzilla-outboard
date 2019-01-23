@@ -38,7 +38,7 @@ body {
 @import 'camera';
 
 .calendar {
-    background: url(../img/calendar_icon.png) 10px center no-repeat;
+    background: #fff url(../img/calendar_icon.png) 10px center no-repeat;
 }
 
 @import 'modal_window';
@@ -77,3 +77,5 @@ body {
         background: #f26522 url(../img/stop.png) 57% center no-repeat;
     }
 }
+
+@import 'media';
