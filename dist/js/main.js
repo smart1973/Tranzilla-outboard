@@ -2,6 +2,7 @@
 
 var setActiveStep = function setActiveStep(step) {
     /* let nav = document.querySelector('.navigation'); */
+    $('.step').removeClass('active');
     var selector = '.step' + (step + 2); //+ '::after';    
     for (var i = 1; i <= step; i++) {
         /* nav.querySelector('.step'+i).classList.add('active');    */
@@ -10,6 +11,78 @@ var setActiveStep = function setActiveStep(step) {
 
     //setPseudoElContent( selector, 'none' );
     // document.querySelector(selector).classList.add('no-after');
+};
+
+var validationForm = function validationForm() {
+    var valid_form = document.querySelector('.form_valid');
+    if (valid_form) {
+        valid_form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var requiredFields = document.querySelectorAll('.required');
+            requiredFields.forEach(function (field) {
+                if (field.value == '') {
+                    if (field.nodeName == 'SELECT') {
+                        field.closest('.select-container').classList.add('error');
+                        field.addEventListener('change', function () {
+                            if (this.nodeName == 'SELECT' && this.value != '') {
+                                this.closest('.select-container').classList.remove('error');
+                            }
+                        });
+                    } else {
+                        field.classList.add('error');
+                        field.addEventListener('input', function () {
+                            if (this.nodeName == 'INPUT') {
+                                this.classList.remove('error');
+                            }
+                        });
+                    }
+                }
+            });
+
+            var errors = document.querySelectorAll('.error');
+            if (errors.length === 0) {
+                console.log(birthday.value);
+                var data = birthday.value.split('/');
+                var d = data[0];
+                var m = data[1];
+                var y = data[2];
+                var nowDate = new Date();
+                var selectedBirthday = new Date(y, m, d);
+                var age = parseInt((nowDate - selectedBirthday) / 1000 / 60 / 60 / 24 / 365);
+                if (age < 18) {
+                    var forAdultsMessage = document.querySelector('.overlay');
+                    forAdultsMessage.classList.add('show');
+
+                    var closeModal = document.querySelector('.close-modal');
+                    closeModal.addEventListener('click', function () {
+                        forAdultsMessage.classList.remove('show');
+                    });
+                }
+            }
+        });
+    }
+};
+
+var switchNavigation = function switchNavigation(activeStep) {
+    setActiveStep(activeStep);
+    $('.navigation').slick('slickGoTo', activeStep - 2);
+    if ($(window).width() <= 768) {
+        /*         if (activeStep <= 4) {
+                    setActiveStep(activeStep);
+                    $('.navigation').slick('slickGoTo', activeStep - 2);
+                } else {
+                    setActiveStep(activeStep - 1);
+                    $('.navigation').slick('slickGoTo', activeStep - 3);
+                } */
+
+        $('.desktop .form_valid').removeClass('form_valid');
+        validationForm();
+    } else {
+        $('.desktop .form').addClass('form_valid');
+        /* setActiveStep(activeStep);
+        $('.navigation').slick('slickGoTo', activeStep - 2); */
+        validationForm();
+    }
 };
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -84,53 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    var valid_form = document.querySelector('.form_valid');
-    if (valid_form) {
-        valid_form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            var requiredFields = document.querySelectorAll('.required');
-            requiredFields.forEach(function (field) {
-                if (field.value == '') {
-                    if (field.nodeName == 'SELECT') {
-                        field.closest('.select-container').classList.add('error');
-                        field.addEventListener('change', function () {
-                            if (this.nodeName == 'SELECT' && this.value != '') {
-                                this.closest('.select-container').classList.remove('error');
-                            }
-                        });
-                    } else {
-                        field.classList.add('error');
-                        field.addEventListener('input', function () {
-                            if (this.nodeName == 'INPUT') {
-                                this.classList.remove('error');
-                            }
-                        });
-                    }
-                }
-            });
-
-            var errors = document.querySelectorAll('.error');
-            if (errors.length === 0) {
-                console.log(birthday.value);
-                var data = birthday.value.split('/');
-                var d = data[0];
-                var m = data[1];
-                var y = data[2];
-                var nowDate = new Date();
-                var selectedBirthday = new Date(y, m, d);
-                var age = parseInt((nowDate - selectedBirthday) / 1000 / 60 / 60 / 24 / 365);
-                if (age < 18) {
-                    var forAdultsMessage = document.querySelector('.overlay');
-                    forAdultsMessage.classList.add('show');
-
-                    var closeModal = document.querySelector('.close-modal');
-                    closeModal.addEventListener('click', function () {
-                        forAdultsMessage.classList.remove('show');
-                    });
-                }
-            }
-        });
-    }
+    validationForm();
 
     /* step 5 */
 
@@ -142,8 +169,10 @@ document.addEventListener('DOMContentLoaded', function () {
         hasPolitic.addEventListener('change', function () {
             if (this.checked) {
                 addFields.slideDown();
+                $('.checked-hide').fadeOut();
             } else {
                 addFields.slideUp();
+                $('.checked-hide').fadeIn();
             }
         });
     }

@@ -134,6 +134,11 @@
     span:first-child {
         padding-top:2px;vertical-align: middle;display: inline-block;
     }
+    span:last-child {
+        display: inline-block;
+        width: 80%;
+        vertical-align: middle;
+    }
     .question {
         cursor: pointer;
         &:hover + .popup-title {

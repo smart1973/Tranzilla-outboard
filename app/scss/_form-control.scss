@@ -52,9 +52,11 @@
         box-sizing: border-box;
         margin: 1% 2%;
     }
+    .select-container {
+      margin: 1% 0;
+    }
     .select-container.full-width {
-      width: 100%;
-      max-width: 622px;
+      width: 100%;      
     }
     input[type="text"]::placeholder, 
     .select-placeholder {

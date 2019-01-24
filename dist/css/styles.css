@@ -520,6 +520,10 @@ body {
     padding-top: 2px;
     vertical-align: middle;
     display: inline-block; }
+  .text span:last-child {
+    display: inline-block;
+    width: 80%;
+    vertical-align: middle; }
   .text .question {
     cursor: pointer; }
     .text .question:hover + .popup-title {
@@ -661,9 +665,10 @@ textarea.form-control {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 1% 2%; }
+  .form .select-container {
+    margin: 1% 0; }
   .form .select-container.full-width {
-    width: 100%;
-    max-width: 622px; }
+    width: 100%; }
   .form input[type="text"]::-webkit-input-placeholder,
   .form .select-placeholder {
     color: #131c25; }
@@ -1444,7 +1449,7 @@ hr {
     .form input[type="text"],
     .form .select-container {
       width: 100%;
-      margin: 2% 2%; }
+      margin: 2% 0; }
   .button_submit, .button_cancel {
     width: 77%; }
   .desktop {
@@ -1495,7 +1500,25 @@ hr {
       margin: 2%;
       width: 45%; }
     .inline-radio-chekcboxes .border-arrow {
-      display: none; } }
+      display: none; }
+  .item img {
+    max-width: 130px; }
+  .items {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .items .item {
+      margin: 10px 15px;
+      -webkit-flex-basis: 40%;
+      -ms-flex-preferred-size: 40%;
+      flex-basis: 40%; }
+      .items .item p {
+        font-weight: 400;
+        margin: 0; }
+  .outside {
+    margin-right: 0; }
+  .slider.slider-horizontal {
+    margin-right: 0 !important; } }
 
 @media (max-width: 568px) {
   .content {
@@ -1506,18 +1529,14 @@ hr {
     max-width: 90%; }
     .form .group.group-textarea {
       max-width: 88%; }
+    .form .group.group-range-slider {
+      max-width: 80%; }
   .button_submit, .button_cancel {
     width: 87%; }
   .header .menu ul {
     margin-right: 6px; }
     .header .menu ul li {
       margin: 0 3px; }
-  .items {
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap; }
-    .items .item {
-      margin: 10px 15px; }
   .inline-group {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
@@ -1534,7 +1553,13 @@ hr {
     max-width: 90%; }
     .inline-radio-chekcboxes .item {
       margin: 2% 0;
-      width: 50%; } }
+      width: 50%; }
+  .slider .tooltip-inner {
+    font-size: 24px; }
+  .slider .tooltip.top {
+    top: 49px; }
+  .text {
+    line-height: 1; } }
 
 @media (max-width: 450px) {
   .navigation {
@@ -1557,7 +1582,9 @@ hr {
         width: 15px;
         right: -15px; }
   .arrowNav {
-    top: 16px; } }
+    top: 16px; }
+  .item img {
+    max-width: 110px; } }
 
 @media (max-width: 350px) {
   .navigation {

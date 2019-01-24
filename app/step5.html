@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tranzilla</title>
 
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/datepicker.min.css">
+    <link rel="stylesheet" href="css/styles.css">    
+    <link rel="stylesheet" href="css/bootstrap-slider.min.css">
 </head>
 <body>
     <div class="loader">
@@ -60,7 +60,7 @@
                     דף מכירה
             </div>
             <div class="content">
-                <div class="navigation">
+                <div class="navigation desktop">
                     <div class="step step10"><a href="/step10.html"> 10 </a></div>
                     <div class="step step9"><a href="/step9.html"> 9 </a></div>
                     <div class="step step8"><a href="/step8.html"> 8 </a></div>
@@ -72,142 +72,496 @@
                     <div class="step step2"><a href="/step2.html"> 2 </a></div>
                     <div class="step step1"><a href="/step1.html"> 1 </a></div>
                 </div>
-                <div class="title">
-                        בחר אופן המכירה 
+                <div class="navigation mobile">
+                    <div class="step step9"><a href="/step9.html"> 9 </a></div>
+                    <div class="step step8"><a href="/step8.html"> 8 </a></div>
+                    <div class="step step7"><a href="/step7.html"> 7 </a></div>
+                    <div class="step step6"><a href="/step6.html"> 6 </a></div>
+                    <div class="step step5"><a href="/step5.html"> 5 </a></div>
+                    <div class="step step4"><a href="/step4.html"> 4 </a></div>                    
+                    <div class="step step3"><a href="/step3.html"> 3 </a></div>
+                    <div class="step step2"><a href="/step2.html"> 2 </a></div>
+                    <div class="step step1"><a href="/step1.html"> 1 </a></div>
+                </div>
+                <div class="desktop">
+                    <div class="title">
+                            בחר אופן המכירה 
+                    </div>
+
+                    <div class="form form_valid">
+                        <form method="POST">
+                            <div class="text group">
+                                <span class="outside">
+                                    <img src="img/q.png" alt="כתובת מגורים" class="question">                
+                                </span>&nbsp;
+                                <span>
+                                        מהו ספק הסליקה שלך באתר?
+                                </span>
+                            </div>
+                            <div class="group flex-container m-b25">
+                                <div class="select-container">
+                                    <div class="select-placeholder">
+                                            ספק הסליקה
+                                    </div>
+                                    <select name="supplier" class="required form-control select-control js-select-custom">
+                                        <option value=""></option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>                         
+
+                                <input type="text" name="url" placeholder="כתובת האתר" class="required flex-right form-control">
+                            </div>
+                            <div class="text group m-b25">
+                                <span class="outside">
+                                    <img src="img/q.png" alt="כתובת מגורים" class="question">                
+                                </span>&nbsp;
+                                <span>
+                                        האם קיים תקנון ? 
+                                </span>
+                            </div>
+                            <div class="group m-b25 checkbox-container">
+                                <span class="plain_text">כן</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="has_politic" name="has_politic">
+                                    <span class="slider round">
+                                        <span class="symbol symbol-yes">	&#10004;</span>
+                                        <span class="symbol symbol-no">&#10006;</span>
+                                    </span>
+                                </label>                       
+                                <span class="plain_text">לא</span>
+                            </div>
+
+                            <div class="group checked-hide">
+                                <p>
+                                        כדי שיהיה ניתן לבצע סליקה באתר, האתר חייב לכלול תקנון אתר אינטרנט, ע”פ חוקי
+                                        הגנת הצרכן. באחריותך להוסיף תקנון לאתר עוד לפני תחילת הסליקה בו, אחרת לא
+                                        תתאפשר העברת כספים לחשבונך.
+                                        לנוחיותך, ניתן  להשתמש בתקנון אתרי אינטרנט ב-
+                                        <a href="#">קישור זה</a>
+                                </p>
+                            </div>
+
+                            <div id="additional_fields">
+                                <div class="text group m-b25">
+                                    <span class="outside" style="visibility: hidden">
+                                            <img src="img/q.png" alt="כתובת מגורים" class="question">   
+                                    </span>
+                                    <span>
+                                            אופן המכירה:
+                                    </span>
+                                </div>
+
+                                <div class="inline-radio-chekcboxes">
+                                    <div class="item">
+                                        <label class="checkbox-wrapper">
+                                            <input type="radio" name="politic" >
+                                            <span class="checkmark"></span>
+                                            <span class="border-arrow"></span>
+                                        </label>
+                                        <span>
+                                                רגיל
+                                        </span>
+                                    </div>
+                                    <div class="item">
+                                        <label class="checkbox-wrapper">
+                                            <input type="radio" name="politic" >
+                                            <span class="checkmark"></span>
+                                            <span class="border-arrow"></span>
+                                        </label>
+                                        <span>
+                                                מכרזים
+                                        </span>
+                                    </div>
+                                    <div class="item">
+                                        <label class="checkbox-wrapper">
+                                            <input type="radio" name="politic" >
+                                            <span class="checkmark"></span>
+                                            <span class="border-arrow"></span>
+                                        </label>
+                                        <span>
+                                            מכירות פומביות 
+                                        </span>
+                                    </div>
+                                    <div class="item">
+                                        <label class="checkbox-wrapper">
+                                            <input type="radio" name="politic" >
+                                            <span class="checkmark"></span>
+                                            <span class="border-arrow"></span>
+                                        </label>
+                                        <span>
+                                            הגרלות
+                                        </span>
+                                    </div>
+                                    <div class="item">
+                                        <label class="checkbox-wrapper">
+                                            <input type="radio" name="politic" >
+                                            <span class="checkmark"></span>
+                                            <span class="border-arrow"></span>
+                                        </label>
+                                        <span>
+                                            אחר
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="group m-b">
+                                    <span class="js-remove-text"></span>
+                                    <textarea name="comment" id="comment" class="form-control" placeholder="פירוט, הזן טקסט"></textarea>
+                                </div>
+
+                            </div>                                      
+                        
+
+                            <button type="submit" class="button_submit m-b">
+                                    המשך
+                            </button>
+                        </form>
+                    </div>
                 </div>
 
-                <div class="form form_valid">
-                    <form method="POST">
-                        <div class="text group">
-                            <span class="outside">
-                                <img src="img/q.png" alt="כתובת מגורים" class="question">                
-                            </span>&nbsp;
-                            <span>
-                                    מהו ספק הסליקה שלך באתר?
-                            </span>
-                        </div>
-                        <div class="group flex-container m-b25">
-                            <div class="select-container">
-                                <div class="select-placeholder">
-                                        ספק הסליקה
+
+
+                <div class="mobile">
+                    <div class="title">
+                            תחום העיסוק
+                    </div>
+
+                    <div class="form form_valid">
+                        <form method="POST">
+                            <div class="group">                            
+                                <div class="select-container full-width">
+                                    <div class="select-placeholder"></div>
+                                    <select name="supplier" class="required form-control select-control js-select-custom">                                    
+                                        <option value="1">אופנה</option>
+                                        <option value="2">2</option>
+                                    </select>
                                 </div>
-                                <select name="supplier" class="required form-control select-control js-select-custom">
-                                    <option value=""></option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                </select>
-                            </div>                         
+                                
+                                <textarea name="" placeholder="פירוט" class="form-control"></textarea>
+                            </div>
+                            
+                            <div class="text group m-b text-center">
+                                <p><b>סוג המוצר / שירות:</b></p>
+                            </div>
+                            <div class="group items">
+                                <div class="item">
+                                    <a href="#">
+                                        <img src="img/mob_step5/pc.png" alt="">
+                                    </a>
+                                    <div class="item__text">
+                                            תוכן דיגיטאלי
+                                    </div>
+                                </div>
 
-                            <input type="text" name="url" placeholder="כתובת האתר" class="required flex-right form-control">
-                        </div>
-                        <div class="text group m-b25">
-                            <span class="outside">
-                                <img src="img/q.png" alt="כתובת מגורים" class="question">                
-                            </span>&nbsp;
-                            <span>
-                                    האם קיים תקנון ? 
-                            </span>
-                        </div>
-                        <div class="group m-b25 checkbox-container">
-                            <span class="plain_text">כן</span>
-                            <label class="switch">
-                                <input type="checkbox" id="has_politic" name="has_politic">
-                                <span class="slider round">
-                                    <span class="symbol symbol-yes">	&#10004;</span>
-                                    <span class="symbol symbol-no">&#10006;</span>
-                                </span>
-                            </label>                       
-                            <span class="plain_text">לא</span>
-                        </div>
+                                <div class="item">
+                                    <a href="#">
+                                        <img src="img/mob_step5/gift.png" alt="">
+                                    </a>
+                                    <div class="item__text">
+                                            פיזי
+                                    </div>
+                                </div>
 
-                        <div id="additional_fields">
-                            <div class="text group m-b25">
-                                <span class="outside" style="visibility: hidden">
-                                        <img src="img/q.png" alt="כתובת מגורים" class="question">   
-                                </span>
+                                <div class="item">
+                                    <a href="#">
+                                        <img src="img/mob_step5/service.png" alt="">
+                                    </a>
+                                    <div class="item__text">
+                                            שירות
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <a href="#">
+                                        <img src="img/mob_step5/handshake.png" alt="">
+                                    </a>
+                                    <div class="item__text">
+                                            אחר
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="group">
+                                <textarea name="" placeholder="פירוט, הזן טקסט" class="form-control"></textarea>
+                            </div>
+
+                            <div class="text group m-b text-center">
+                                <p><b>זמן ואופן אספקת השירות: </b></p>
+                            </div>
+                            <div class="group items">
+                                <div class="item">
+                                    <a href="#">
+                                        <img src="img/mob_step5/1.png" alt="">
+                                    </a>
+                                    <div class="item__text">
+                                            פיזי
+                                            <p>
+                                                    טקסט קצר דמו מגיע לכאן בקרוב מאוד
+                                            </p>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <a href="#">
+                                        <img src="img/mob_step5/2.png" alt="">
+                                    </a>
+                                    <div class="item__text">
+                                            תוכן דיגיטאלי
+                                            <p>
+                                                    טקסט קצר דמו מגיע לכאן בקרוב מאוד
+                                            </p>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <a href="#">
+                                        <img src="img/mob_step5/3.png" alt="">
+                                    </a>
+                                    <div class="item__text">
+                                            אחר
+                                            <p>
+                                                    טקסט קצר דמו מגיע לכאן בקרוב מאוד
+                                            </p>
+                                    </div>
+                                </div>                                  
+                                
+                            </div>    
+                            <div class="group m-b25">
+                                <div class="select-container ">
+                                    <div class="select-placeholder">
+                                            זמן אספקה ממוצה
+                                    </div>
+                                    <select name="supplier" class="required form-control select-control js-select-custom">                                    
+                                        <option value=""></option>
+                                        <option value="1">30</option>
+                                        <option value="2">60</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="text group m-b text-center">                                
+                                <p><b>סכום עסקה ממוצע צפוי (בחר/י את הקרוב ביותר) : </b></p>
+                            </div>
+
+                            <div class="group group-range-slider" >
+
+                                <input id="ex13" type="text" />
+                                <!-- <div class="range">
+                                    <div class="range_value">
+                                        <span class="value">100</span>
+                                        <span>₪</span>
+                                    </div>
+                                    <input id="range_slider" type="range" min="1" max="100" step="2" value="0" class="slider">
+                                    <div class="sliderticks">
+                                        <p>100</p>
+                                        <p>250</p>
+                                        <p>500</p>
+                                        <p>1000</p>
+                                        <p>>&nbsp;1000</p>                                    
+                                    </div>
+                                </div> -->
+                            </div>
+                            
+                            
+                            <div class="text group m-b">
+                                <span class="outside">
+                                    <img src="img/q.png" alt="כתובת מגורים" class="question">                
+                                </span>&nbsp;
                                 <span>
-                                        אופן המכירה:
+                                        האם מקבל/קיבלת שירותי סליקה כיום או בעבר ? 
+                                </span>
+                            </div>
+                            <div class="group m-b25 checkbox-container">
+                                <span class="plain_text">כן</span>
+                                <label class="switch">
+                                    <input type="checkbox" name="service" checked>
+                                    <span class="slider round">
+                                        <span class="symbol symbol-yes">	&#10004;</span>
+                                        <span class="symbol symbol-no">&#10006;</span>
+                                    </span>
+                                </label>                       
+                                <span class="plain_text">לא</span>
+                            </div>
+
+
+                            
+                            <div class="group m-b">
+                                <div class="select-container full-width">
+                                    <div class="select-placeholder">
+                                            חברת סליקה
+                                    </div>
+                                    <select name="supplier" class="required form-control select-control js-select-custom">                                    
+                                        <option value=""></option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="group m-b25">
+                                <div class="select-container full-width">
+                                    <div class="select-placeholder">
+                                            מספר הספק
+                                    </div>
+                                    <select name="supplier" class="required form-control select-control js-select-custom">                                    
+                                        <option value=""></option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            
+                            <div class="text group m-b">
+                                <span class="outside">
+                                    <img src="img/q.png" alt="כתובת מגורים" class="question">                
+                                </span>&nbsp;
+                                <span>
+                                        רוצה להעביר את מספר הספק לטרנזילה? 
                                 </span>
                             </div>
 
-                            <div class="inline-radio-chekcboxes">
-                                <div class="item">
-                                    <label class="checkbox-wrapper">
-                                        <input type="radio" name="politic" >
-                                        <span class="checkmark"></span>
-                                        <span class="border-arrow"></span>
-                                    </label>
-                                    <span>
-                                            רגיל
+                            <div class="group m-b25 checkbox-container">
+                                <span class="plain_text">כן</span>
+                                <label class="switch">
+                                    <input type="checkbox" name="transfer" checked>
+                                    <span class="slider round">
+                                        <span class="symbol symbol-yes">	&#10004;</span>
+                                        <span class="symbol symbol-no">&#10006;</span>
                                     </span>
-                                </div>
-                                <div class="item">
-                                    <label class="checkbox-wrapper">
-                                        <input type="radio" name="politic" >
-                                        <span class="checkmark"></span>
-                                        <span class="border-arrow"></span>
-                                    </label>
-                                    <span>
-                                            מכרזים
-                                    </span>
-                                </div>
-                                <div class="item">
-                                    <label class="checkbox-wrapper">
-                                        <input type="radio" name="politic" >
-                                        <span class="checkmark"></span>
-                                        <span class="border-arrow"></span>
-                                    </label>
-                                    <span>
-                                        מכירות פומביות 
-                                    </span>
-                                </div>
-                                <div class="item">
-                                    <label class="checkbox-wrapper">
-                                        <input type="radio" name="politic" >
-                                        <span class="checkmark"></span>
-                                        <span class="border-arrow"></span>
-                                    </label>
-                                    <span>
-                                        הגרלות
-                                    </span>
-                                </div>
-                                <div class="item">
-                                    <label class="checkbox-wrapper">
-                                        <input type="radio" name="politic" >
-                                        <span class="checkmark"></span>
-                                        <span class="border-arrow"></span>
-                                    </label>
-                                    <span>
-                                        אחר
-                                    </span>
-                                </div>
+                                </label>                       
+                                <span class="plain_text">לא</span>
                             </div>
 
-                            <div class="group m-b">
-                                <span class="js-remove-text"></span>
-                                <textarea name="comment" id="comment" class="form-control" placeholder="פירוט, הזן טקסט"></textarea>
+                            
+                            <div class="text group m-b25">
+                                <span class="outside">
+                                    <img src="img/q.png" alt="כתובת מגורים" class="question">                
+                                </span>&nbsp;
+                                <span>
+                                        האם בית העסק סורב לפעילות בנקאית בתאגיד אחר ? 
+                                </span>
+                            </div>
+                            <div class="group m-b25 checkbox-container">
+                                <span class="plain_text">כן</span>
+                                <label class="switch">
+                                    <input type="checkbox" name="failure_earlier" checked>
+                                    <span class="slider round">
+                                        <span class="symbol symbol-yes">	&#10004;</span>
+                                        <span class="symbol symbol-no">&#10006;</span>
+                                    </span>
+                                </label>                       
+                                <span class="plain_text">לא</span>
                             </div>
 
-                        </div>                                      
-                     
+                            <!-- <div class="group m-b25">
+                                <div class="select-container full-width">
+                                    <div class="select-placeholder">
+                                            בחר סיבה
+                                    </div>
+                                    <select name="supplier" class="required form-control select-control js-select-custom">                                    
+                                        <option value=""></option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                            </div> -->
+                            <div class="text group m-b text-center">
+                                    <p><b>עמותה “שם עמותה” ח.פ. 30548976</b></p>
+                                    <p style="font-weight: 400">מהי מטרת העמותה:</p>
+                            </div>
+                            <div class="group m-b25">
+                                <textarea name="" placeholder="הקלדת טקסט הסבר כאן . . . | " class="form-control"></textarea>
+                            </div>
+                            
+                            <div class="text group m-b25">
+                                <span class="outside">
+                                    <img src="img/q.png" alt="כתובת מגורים" class="question">                
+                                </span>&nbsp;
+                                <span>
+                                        האם יש לעמותה אישור ניהול תקין ? 
+                                </span>
+                            </div>
+                            <div class="group m-b25 checkbox-container">
+                                <span class="plain_text">כן</span>
+                                <label class="switch">
+                                    <input type="checkbox" name="failure_earlier" checked>
+                                    <span class="slider round">
+                                        <span class="symbol symbol-yes">	&#10004;</span>
+                                        <span class="symbol symbol-no">&#10006;</span>
+                                    </span>
+                                </label>                       
+                                <span class="plain_text">לא</span>
+                            </div>
 
-                        <button type="submit" class="button_submit m-b">
-                                המשך
-                        </button>
-                    </form>
-                </div>                
+                            <div class="text group m-b25">
+                                <span class="outside">
+                                    <img src="img/q.png" alt="כתובת מגורים" class="question">                
+                                </span>&nbsp;
+                                <span>
+                                        מהם מקורות המימון של העמותה ?
+                                </span>
+                            </div>
+                            <div class="group m-b25">
+                                <textarea name="" placeholder="הקלדת טקסט הסבר כאן . . . | " class="form-control"></textarea>
+                            </div>
+
+                            <div class="text group m-b25">
+                                <span class="outside">
+                                    <img src="img/q.png" alt="כתובת מגורים" class="question">                
+                                </span>&nbsp;
+                                <span>
+                                        האם יתקבלו תרומות מחו"ל ? 
+                                </span>
+                            </div>
+                            <div class="group m-b25 checkbox-container">
+                                <span class="plain_text">כן</span>
+                                <label class="switch">
+                                    <input type="checkbox" name="failure_earlier" checked>
+                                    <span class="slider round">
+                                        <span class="symbol symbol-yes">	&#10004;</span>
+                                        <span class="symbol symbol-no">&#10006;</span>
+                                    </span>
+                                </label>                       
+                                <span class="plain_text">לא</span>
+                            </div>
+
+                            <button type="submit" class="button_submit m-b step6">
+                                    המשך
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/slick.min.js"></script>    
     <script src="js/main.js"></script>
+    <script src="js/bootstrap-slider.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var activeStep = 5;
-            setActiveStep(activeStep);
-            $('.navigation').slick('slickGoTo', 3);
-        })
+            switchNavigation(activeStep);
+            $(window).resize(function() {
+                switchNavigation(activeStep);
+            })
+
+            $("#ex13").slider({
+                ticks: [100, 250, 500, 1000, 1025],
+                ticks_labels: ["100 ₪", "250 ₪", "500 ₪", "1000 ₪", "מעל 1.000 ₪"],
+                ticks_positions: [0, 25, 50, 75, 100],
+                step: 25,                
+            });
+          /*   $('#range_slider').change(function() {
+                var value = $(this).val() * 10;
+                $('.range_value .value').text(value);
+            }); */
+        });
     </script>
 </body>
 </html>

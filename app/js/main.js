@@ -1,5 +1,6 @@
 const setActiveStep = (step) => {
     /* let nav = document.querySelector('.navigation'); */
+    $('.step').removeClass('active');
     let selector = '.step' + (step+2) //+ '::after';    
     for (let i = 1; i <= step; i++) {
         /* nav.querySelector('.step'+i).classList.add('active');    */     
@@ -8,6 +9,78 @@ const setActiveStep = (step) => {
     
     //setPseudoElContent( selector, 'none' );
 // document.querySelector(selector).classList.add('no-after');
+}
+
+const validationForm = () => {
+    let valid_form = document.querySelector('.form_valid');
+    if (valid_form) {
+        valid_form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let requiredFields = document.querySelectorAll('.required');
+            requiredFields.forEach( (field) => {
+                if (field.value == '') {
+                    if ( field.nodeName == 'SELECT' ) {
+                        field.closest('.select-container').classList.add('error');
+                        field.addEventListener('change', function() {
+                            if (this.nodeName == 'SELECT' && this.value != '') {
+                                this.closest('.select-container').classList.remove('error');
+                            }
+                        })
+                    } else { 
+                        field.classList.add('error')
+                        field.addEventListener('input', function() {
+                            if (this.nodeName == 'INPUT') {
+                                this.classList.remove('error');
+                            }
+                        })
+                    }
+                }            
+            })
+
+            let errors = document.querySelectorAll('.error');
+            if (errors.length === 0) {
+                console.log(birthday.value);
+                let data = birthday.value.split('/');
+                let d = data[0];
+                let m = data[1];
+                let y = data[2];
+                let nowDate = new Date();
+                let selectedBirthday = new Date(y, m, d);
+                let age = parseInt( (nowDate - selectedBirthday) / 1000 / 60 / 60 / 24 / 365 );
+                if (age < 18) {
+                    let forAdultsMessage = document.querySelector('.overlay');
+                    forAdultsMessage.classList.add('show');
+
+                    let closeModal = document.querySelector('.close-modal');
+                    closeModal.addEventListener('click', () => {
+                        forAdultsMessage.classList.remove('show');
+                    })
+                }
+            }
+        })
+    }
+}
+
+const switchNavigation = (activeStep) => {
+    setActiveStep(activeStep);
+    $('.navigation').slick('slickGoTo', activeStep - 2);
+    if ($(window).width() <= 768) {
+/*         if (activeStep <= 4) {
+            setActiveStep(activeStep);
+            $('.navigation').slick('slickGoTo', activeStep - 2);
+        } else {
+            setActiveStep(activeStep - 1);
+            $('.navigation').slick('slickGoTo', activeStep - 3);
+        } */
+
+        $('.desktop .form_valid').removeClass('form_valid');
+        validationForm();
+    } else {
+        $('.desktop .form').addClass('form_valid');        
+        /* setActiveStep(activeStep);
+        $('.navigation').slick('slickGoTo', activeStep - 2); */
+        validationForm();
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -82,53 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     }
 
-    let valid_form = document.querySelector('.form_valid');
-    if (valid_form) {
-        valid_form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            let requiredFields = document.querySelectorAll('.required');
-            requiredFields.forEach( (field) => {
-                if (field.value == '') {
-                    if ( field.nodeName == 'SELECT' ) {
-                        field.closest('.select-container').classList.add('error');
-                        field.addEventListener('change', function() {
-                            if (this.nodeName == 'SELECT' && this.value != '') {
-                                this.closest('.select-container').classList.remove('error');
-                            }
-                        })
-                    } else { 
-                        field.classList.add('error')
-                        field.addEventListener('input', function() {
-                            if (this.nodeName == 'INPUT') {
-                                this.classList.remove('error');
-                            }
-                        })
-                    }
-                }            
-            })
-
-            let errors = document.querySelectorAll('.error');
-            if (errors.length === 0) {
-                console.log(birthday.value);
-                let data = birthday.value.split('/');
-                let d = data[0];
-                let m = data[1];
-                let y = data[2];
-                let nowDate = new Date();
-                let selectedBirthday = new Date(y, m, d);
-                let age = parseInt( (nowDate - selectedBirthday) / 1000 / 60 / 60 / 24 / 365 );
-                if (age < 18) {
-                    let forAdultsMessage = document.querySelector('.overlay');
-                    forAdultsMessage.classList.add('show');
-
-                    let closeModal = document.querySelector('.close-modal');
-                    closeModal.addEventListener('click', () => {
-                        forAdultsMessage.classList.remove('show');
-                    })
-                }
-            }
-        })
-    }
+    validationForm();
 
     /* step 5 */
 
@@ -140,8 +167,10 @@ document.addEventListener('DOMContentLoaded', function() {
         hasPolitic.addEventListener('change', function() {
             if (this.checked) {                
                 addFields.slideDown();
+                $('.checked-hide').fadeOut();
             } else {
                 addFields.slideUp();
+                $('.checked-hide').fadeIn();
             }
         });
     }
