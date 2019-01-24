@@ -171,6 +171,9 @@
     &:last-child {
       margin-right: 30px;
     }
+    &.no-margin {
+      margin: 0;
+    }
     input {
       position: absolute;
       opacity: 0;

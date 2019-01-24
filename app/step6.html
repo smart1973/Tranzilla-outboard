@@ -349,8 +349,10 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var activeStep = 6;
-            setActiveStep(activeStep);
-            $('.navigation').slick('slickGoTo', activeStep - 2);
+            switchNavigation(activeStep);
+            $(window).resize(function() {
+                switchNavigation(activeStep);
+            })
 
             $("#ex13").slider({
                 ticks: [100, 250, 500, 1000, 1025],

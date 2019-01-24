@@ -67,13 +67,13 @@ var switchNavigation = function switchNavigation(activeStep) {
     setActiveStep(activeStep);
     $('.navigation').slick('slickGoTo', activeStep - 2);
     if ($(window).width() <= 768) {
-        /*         if (activeStep <= 4) {
-                    setActiveStep(activeStep);
-                    $('.navigation').slick('slickGoTo', activeStep - 2);
-                } else {
-                    setActiveStep(activeStep - 1);
-                    $('.navigation').slick('slickGoTo', activeStep - 3);
-                } */
+        if (activeStep == 9) {
+            setActiveStep(activeStep);
+            $('.navigation').slick('slickGoTo', activeStep - 3);
+        } /* else {
+            setActiveStep(activeStep - 1);
+            $('.navigation').slick('slickGoTo', activeStep - 2);
+          } */
 
         $('.desktop .form_valid').removeClass('form_valid');
         validationForm();
